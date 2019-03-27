@@ -3,22 +3,19 @@
 namespace App\Form;
 
 use App\Entity\Domaine;
-use App\Entity\Etudiant;
+use App\Entity\Encadreur;
 use App\Entity\Universite;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EtudiantType extends AbstractType
+class EncadreurType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('cin')
-            ->add('numCarteEtud',null, array(
-                'label'=> 'Numero Carte Etudiant',
-            ))
             ->add('domaine', EntityType::class, array(
                 'class'=> Domaine::class,
                 'choice_label'=> 'nom',
@@ -38,7 +35,7 @@ class EtudiantType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Etudiant::class,
+            'data_class' => Encadreur::class,
         ]);
     }
 }

@@ -31,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index-2.html">Turbo Admin</a>
+            <a class="navbar-brand" href="../index-2.html"></a>
         </div>
     </div>
 </nav>
@@ -53,20 +53,21 @@
                                     {{ form_start(form) }}
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            {{ form_row(form.utilisateur.email) }}
-                                        </div>
-                                        <div class="col-lg-6">
-                                            {{ form_row(form.utilisateur.plainPassword) }}
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
                                             {{ form_row(form.utilisateur.nom) }}
                                         </div>
                                         <div class="col-lg-6">
                                             {{ form_row(form.utilisateur.prenom) }}
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.email) }}
+                                        </div>
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.plainPassword) }}
+                                        </div>
+                                    </div>
+
 
                                     {{ form_rest(form) }}
                                     <div class="row">
@@ -78,6 +79,7 @@
 
                                 </div>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>

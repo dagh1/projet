@@ -19,7 +19,9 @@
 <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
 
+<link href="{{ asset('administration/css/modification.css') }}" rel="stylesheet"/>
 <body>
+
 <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
     <div class="container">
         <div class="navbar-header">
@@ -39,63 +41,45 @@
         <div class="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
 
                         <form method="post">
                             <div class="card card-login card-hidden">
                                 <div class="card-header text-center">
-                                    <h4 class="card-title">Connexion</h4>
+                                    <h4 class="card-title">Inscription encadreur</h4>
                                 </div>
-                                <div class="card-content">
-                                    {% if error %}
-                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                                    {% endif %}
-                                    <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">email</i>
-                                            </span>
-                                        <div class="form-group label-floating">
-                                            <label for="inputEmail" class="sr-only">Email</label>
-                                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
-                                                   class="form-control" placeholder="Votre email" required autofocus>
+                                <div class="card-content" style="padding: 55px;">
+
+                                    {{ form_start(form) }}
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.nom) }}
+                                        </div>
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.prenom) }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.email) }}
+                                        </div>
+                                        <div class="col-lg-6">
+                                            {{ form_row(form.utilisateur.plainPassword) }}
                                         </div>
                                     </div>
 
-                                    <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">lock_outline</i>
-                                            </span>
-                                        <div class="form-group label-floating">
-                                            <label for="inputPassword" class="sr-only">Mot de passe</label>
-                                            <input type="password" name="password" id="inputPassword"
-                                                   class="form-control"
-                                                   placeholder="Mot de passe" required>
+
+                                    {{ form_rest(form) }}
+                                    <div class="row">
+                                        <div class="col-lg-12 form-group text-center">
+                                            <button class="btn btn-lg btn-primary">S'inscrire</button>
+                                            {{ form_end(form) }}
                                         </div>
                                     </div>
 
-                                    <input type="hidden" name="_csrf_token"
-                                           value="{{ csrf_token('authenticate') }}"
-                                    >
-
-                                    {#
-                                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                                        See https://symfony.com/doc/current/security/remember_me.html
-
-                                        <div class="checkbox mb-3">
-                                            <label>
-                                                <input type="checkbox" name="_remember_me"> Remember me
-                                            </label>
-                                        </div>
-                                    #}
-                                    <div class="form-group text-center">
-                                        <button class="btn btn-lg btn-primary" type="submit">
-                                            Connexion
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
