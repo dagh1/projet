@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+espace_admin:
+    resource: '../src/Controller/Administration'
+    type: annotation
+    prefix: administration

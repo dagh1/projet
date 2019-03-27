@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion rapport{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des rapports</h4>
+                    <a href="{{ path('admin_rapport_ajouter') }}" class="btn btn-success"><i class="material-icons">control_point</i>
+                        Ajouter</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="col-lg-3">Titre</th>
+                                <th class="col-lg-2">Domaine</th>
+                                <th class="col-lg-2">Université</th>
+                                <th class="col-lg-2 text-center">Fichier</th>
+                                <th class="text-right col-lg-1">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for rapport in rapports %}
+                                <tr>
+                                    <td>{{ rapport.titre|capitalize }}</td>
+                                    <td>{{ rapport.domaine.nom }}</td>
+                                    <td>{{ rapport.universite.nom|capitalize }}</td>
+                                    <td class="text-center"><a href="{{ asset(rapport.webPath) }}" download="{{ rapport.titre }}"><i class="material-icons">cloud_download</i></a> </td>
+                                    <td class="td-actions text-right">
+                                        <a href="{{ path('admin_rapport_modifier', {'id': rapport.id}) }}" rel="tooltip"
+                                           class="btn btn-success btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="{{ path('admin_rapport_supprimer', {'id': rapport.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

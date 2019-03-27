@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion societe{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des societes</h4>
+                    <a href="{{ path('admin_societe_ajouter') }}" class="btn btn-success"><i class="material-icons">control_point</i>
+                        Ajouter</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="col-lg-3">Nom</th>
+                                <th class="col-lg-2">Email</th>
+                                <th class="col-lg-2">Telephone</th>
+                                <th class="col-lg-1">Ville</th>
+                                <th class="col-lg-3">Domaines</th>
+                                <th class="text-right col-lg-1">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for societe in societes %}
+                                <tr>
+                                    <td>{{ societe.nom|capitalize }}</td>
+                                    <td>{{ societe.email }}</td>
+                                    <td>{{ societe.telephone }}</td>
+                                    <td>{{ societe.ville.nom|capitalize }}</td>
+                                    <td>
+                                        {% for domaine in societe.domaines %}
+                                            - {{ domaine.nom }}<br>
+                                        {% endfor %}
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <a href="{{ path('admin_societe_modifier', {'id': societe.id}) }}" rel="tooltip"
+                                           class="btn btn-success btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="{{ path('admin_societe_supprimer', {'id': societe.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

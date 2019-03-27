@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion projet{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des projets</h4>
+                    <a href="{{ path('admin_projet_ajouter') }}" class="btn btn-success"><i class="material-icons">control_point</i>
+                        Ajouter</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="col-lg-3">titre</th>
+                                <th class="col-lg-2">dateSoumettre</th>
+                                <th class="col-lg-2">etudiant</th>
+
+
+                                <th class="text-right col-lg-1">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for projet in projets %}
+                                <tr>
+                                    <td>{{ projet.titre|capitalize }}</td>
+                                    <td>{{ projet.DateSoumettre }}</td>
+                                    <td>{{ projet.etudiant.nom|capitalize }}</td>
+
+                                    <td class="td-actions text-right">
+                                        <a href="{{ path('admin_projet_modifier', {'id': projet.id}) }}" rel="tooltip"
+                                           class="btn btn-success btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="{{ path('admin_projet_supprimer', {'id': projet.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

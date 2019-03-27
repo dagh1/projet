@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion deomaine{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des domaines</h4>
+                    <a href="{{ path('admin_domaine_ajouter') }}" class="btn btn-success" ><i class="material-icons">control_point</i>
+                        Ajouter</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="text-center col-lg-1">#</th>
+                                <th class="col-lg-9">Nom</th>
+                                <th class="text-right col-lg-2">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for domaine in domaines %}
+                                <tr>
+                                    <td class="text-center">{{ domaine.id }}</td>
+                                    <td>{{ domaine.nom|capitalize }}</td>
+                                    <td class="td-actions text-right">
+                                        <a href="{{ path('domaine_modifier', {'id': domaine.id}) }}" rel="tooltip"
+                                           class="btn btn-success btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="{{ path('admin_domaine_supprimer', {'id': domaine.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

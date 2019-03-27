@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion deomaine{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Modifier domaine</h4>
+                    <div class="col-lg-6">
+                        {{ form_start(form) }}
+                        {{ form_row(form) }}
+                        <input type="submit" class="btn btn-primary">
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
