@@ -4,44 +4,44 @@
 
 {% block body %}
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-content">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-content">
+                <div class="container">
                     <h4 class="card-title">Liste des offrestages</h4>
 
-                    <form action="{{ path('espace_etudiant_offrestage_chercher') }}" method="get">
-                        {{ render(controller('App\\Controller\\DefaultController:formulaireChercherSociete')) }}
-                    </form>
 
                     <hr style="border: 1px solid cadetblue">
 
                     {% if offrestages %}
-                        <div class="offrestage">
+                    <div class="offrestage">
 
-                            {% for offrestage in offrestages %}
-                            <h2>{{ offrestage.titre }}</h2>
+                        {% for offrestage in offrestages %}
+                        <h2>{{ offrestage.titre }}</h2>
 
-                            <div class="content">
-                                <p>{{offrestage.societe.nom}}</p>
-                                <p>de {{offrestage.datedebut}}
-                                à {{offrestage.datefin}}</p>
-                                domaine: {{ offrestage.domaine.nom }}<br>
+                        <div class="content">
+                            <p>{{ offrestage.societe.nom }}</p>
+                            <p>de {{ offrestage.datedebut| date('d/m/Y')  }}
+                                à {{ offrestage.datefin| date('d/m/Y')  }}</p>
+                            domaine: {{ offrestage.domaine.nom }}<br>
 
 
-                                <a href="{{ path('espace_etudiant_offrestage_show',{'id':offrestage.id}) }}" class="btn btn-primary">lire la suite</a>
+                            <a href="{{ path('espace_etudiant_offrestage_show',{'id':offrestage.id}) }}"
+                               class="btn btn-primary">lire la suite</a>
 
 
                             {% endfor %}
                         </div>
-                    {% else %}
-                        <div class="alert alert-danger">
-                            <h5>Aucun résultat n'a été trouvé.</h5>
-                        </div>
-                    {% endif %}
+                        {% else %}
+                            <div class="alert alert-danger">
+                                <h5>Aucun résultat n'a été trouvé.</h5>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-{% endblock %}
+    {% endblock %}
