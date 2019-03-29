@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+
+
+    <h2>{{ offrestage.titre }}</h2>
+    
+    <div class="content">
+        <p>{{offrestage.description }}</p>
+        <p>{{offrestage.societe.nom}}</p>
+        <p>de {{offrestage.datedebut}}
+            à {{offrestage.datefin}}</p>
+        domaine: {{ offrestage.domaine.nom }}<br>
+        
+        
+    </div>
+<div>
+    <h1>Contact</h1>
+        
+    Email: {{ offrestage.societe.email }}<br>
+    telephne:{{ offrestage.societe.telephone }}<br>
+    ville:{ offrestage.societe.ville.nom|capitalize }}
+    
+    
+</div>
+{% endblock %}
