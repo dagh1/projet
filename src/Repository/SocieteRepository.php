@@ -19,22 +19,29 @@ class SocieteRepository extends ServiceEntityRepository
         parent::__construct($registry, Societe::class);
     }
 
-    // /**
-    //  * @return Societe[] Returns an array of Societe objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function chercher($donnees)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $qb = $this->createQueryBuilder('s')
+            ->orderBy('s.nom', 'ASC');
+
+        if (!empty($donnees['nom'])) {
+            $qb->andWhere('s.nom like :nom')
+                ->setParameter('nom', '%' . $donnees['nom'] . '%');
+        }
+        if (!empty($donnees['ville'])) {
+            $qb->andWhere('s.ville = :ville')
+                ->setParameter('ville', $donnees['ville']);
+        }
+        if (!empty($donnees['domaine'])) {
+            $qb->andWhere(':domaine MEMBER OF s.domaines')
+                ->setParameter('domaine', $donnees['domaine']);
+        }
+
+        return $qb->getQuery()->getResult();
+
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Societe

@@ -87,5 +87,19 @@ class SocieteController extends AbstractController
 
     }
 
+    /**
+     * @Route("/societe/chercher", name="admin_societe_chercher")
+     */
+    public function chercher(Request $request)
+    {
+        $donnees = $request->query->all(); // récuperer tous les paramaetres dans l'url
+
+        $em = $this->getDoctrine()->getManager();
+        $societes = $em->getRepository(Societe::class)->chercher($donnees);
+
+        return $this->render('administration/societe/liste.html.twig', array(
+            'societes' => $societes,
+        ));
+    }
 
 }

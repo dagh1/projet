@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Administration;
+namespace App\Controller\EspaceEtudiant;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/administration", name="admin_index")
+     * @Route("/", name="espace_etudiant_index")
      */
     public function index()
     {
-        return $this->render('administration/accueil.html.twig');
+        return $this->render('espace_etudiant/accueil.html.twig');
     }
 }

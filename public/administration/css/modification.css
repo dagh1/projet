@@ -16,3 +16,7 @@
     opacity: inherit;
     position: inherit;
 }
+
+.form-group label.control-label {
+    font-size: 14px;
+}

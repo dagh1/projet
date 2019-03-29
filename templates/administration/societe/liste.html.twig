@@ -9,6 +9,13 @@
             <div class="card">
                 <div class="card-content">
                     <h4 class="card-title">Liste des societes</h4>
+
+                    <form action="{{ path('admin_societe_chercher') }}" method="get">
+                        {{ render(controller('App\\Controller\\DefaultController:formulaireChercherSociete')) }}
+                    </form>
+
+                    <hr style="border: 1px solid cadetblue">
+
                     <a href="{{ path('admin_societe_ajouter') }}" class="btn btn-success"><i class="material-icons">control_point</i>
                         Ajouter</a>
                     <div class="table-responsive">

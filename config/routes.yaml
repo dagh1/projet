@@ -6,3 +6,13 @@ espace_admin:
     resource: '../src/Controller/Administration'
     type: annotation
     prefix: administration
+
+espace_etudiant:
+    resource: '../src/Controller/EspaceEtudiant'
+    type: annotation
+    prefix: espace-etudiant
+
+espace_encadreur:
+    resource: '../src/Controller/EspaceEncadreur'
+    type: annotation
+    prefix: espace-encadreur

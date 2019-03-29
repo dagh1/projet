@@ -73,7 +73,7 @@ class RegistrationController extends AbstractController
                     $form->get('utilisateur')->get('plainPassword')->getData()
                 )
             );
-            $utilisateur->setRoles(array('ROLE_Encadreur'));
+            $utilisateur->setRoles(array('ROLE_ENCADREUR'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($encadreur);
             $entityManager->flush();
