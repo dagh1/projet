@@ -17,7 +17,7 @@ class RapportController extends AbstractController
 
         $rapports = $em->getRepository(Rapport::class)->findAll();
 
-        return $this->render('administration/rapport/liste.html.twig', array(
+        return $this->render('espace_etudiant/rapport/liste.html.twig', array(
             'rapports' => $rapports
         ));
     }
