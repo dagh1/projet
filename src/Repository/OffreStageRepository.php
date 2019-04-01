@@ -19,6 +19,20 @@ class OffreStageRepository extends ServiceEntityRepository
         parent::__construct($registry, OffreStage::class);
     }
 
+
+    public function chercher($donnees)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->orderBy('s.titre', 'ASC');
+
+        if (!empty($donnees['titre'])) {
+            $qb->andWhere('s.titre like :titre')
+                ->setParameter('titre', '%' . $donnees['titre'] . '%');
+        }
+
+        return $qb->getQuery()->getResult();
+
+    }
     // /**
     //  * @return OffreStage[] Returns an array of OffreStage objects
     //  */

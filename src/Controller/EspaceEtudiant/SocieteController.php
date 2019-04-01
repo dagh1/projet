@@ -4,6 +4,7 @@ namespace App\Controller\EspaceEtudiant;
 
 use App\Entity\Societe;
 use App\Form\SocieteChercherType;
+use App\Repository\SocieteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
