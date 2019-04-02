@@ -1,29 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h2>{{ offrestage.titre }}</h2>
+
+                    <div class="content">
+                        <p>{{ offrestage.description }}</p>
+                        <p>{{ offrestage.societe.nom }}</p>
+                        <p>de {{ offrestage.datedebut| date('d/m/Y') }}
+                            à {{ offrestage.datefin| date('d/m/Y') }}</p>
+                        domaine: {{ offrestage.domaine.nom }}<br>
 
 
+                    </div>
+                    <div>
+                        <h3>Contact</h3>
 
+                        Email: {{ offrestage.societe.email }}<br>
+                        telephone:{{ offrestage.societe.telephone }}<br>
+                        ville:{{ offrestage.societe.ville.nom|capitalize }}
 
-    <div class="container">
-    <h2>{{ offrestage.titre }}</h2>
-
-    <div class="content">
-        <p>{{offrestage.description }}</p>
-        <p>{{offrestage.societe.nom}}</p>
-        <p>de {{offrestage.datedebut| date('d/m/Y') }}
-            à {{offrestage.datefin| date('d/m/Y') }}</p>
-        domaine: {{ offrestage.domaine.nom }}<br>
-        
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-<div>
-    <h1>Contact</h1>
 
-    Email: {{ offrestage.societe.email }}<br>
-    telephone:{{ offrestage.societe.telephone }}<br>
-    ville:{{ offrestage.societe.ville.nom|capitalize }}
-    
-</div>
-</div>
 {% endblock %}

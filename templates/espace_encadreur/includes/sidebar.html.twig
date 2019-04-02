@@ -19,66 +19,10 @@
             </li>
 
             <li>
-                <a href="{{ path('espace_etudiant_societe_liste') }}" >
+                <a href="{{ path('espace_encadreur_etudiant_liste') }}" >
                     <i class="material-icons">aspect_ratio</i>
-                    <p>societes
-                        <b class="caret"></b>
-                    </p>
+                    <p>Etudiants</p>
                 </a>
-            </li>
-            <li>
-                <a data-toggle="collapse" href="#offrestages" class="collapsed" aria-expanded="false">
-                    <i class="material-icons">aspect_ratio</i>
-                    <p>offres des stages
-                        <b class="caret"></b>
-                    </p>
-                </a>
-                <div class="collapse" id="offrestages" aria-expanded="false" style="height: 0px;">
-                    <ul class="nav">
-                        <li>
-                            <a href="{{ path('admin_offrestage_liste') }}">Liste</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_offrestage_ajouter') }}">Ajouter</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-toggle="collapse" href="#universite" class="collapsed" aria-expanded="false">
-                    <i class="material-icons">account_balance</i>
-                    <p>Universite
-                        <b class="caret"></b>
-                    </p>
-                </a>
-                <div class="collapse" id="universite" aria-expanded="false" style="height: 0px;">
-                    <ul class="nav">
-                        <li>
-                            <a href="{{ path('admin_Universite_liste') }}">Liste</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_universite_ajouter') }}">Ajouter</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a data-toggle="collapse" href="#rapport" class="collapsed" aria-expanded="false">
-                    <i class="material-icons">description</i>
-                    <p>Rapport
-                        <b class="caret"></b>
-                    </p>
-                </a>
-                <div class="collapse" id="rapport" aria-expanded="false" style="height: 0px;">
-                    <ul class="nav">
-                        <li>
-                            <a href="{{ path('admin_rapport_liste') }}">Liste</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_rapport_ajouter') }}">Ajouter</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
         </ul>
 

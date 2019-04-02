@@ -17,11 +17,6 @@ class ProjetType extends AbstractType
             ->add('sujet')
             ->add('description')
             ->add('dateSoumettre')
-            ->add('etudiant',EntityType::class, array(
-                'class'=> Etudiant::class,
-                'choice_label'=> 'nom',
-                'placeholder'=> 'Choisir etudiant'))
-
         ;
     }
 

@@ -25,17 +25,6 @@ class EncadreurController extends AbstractController
     }
 
     /**
-     * @Route("/encadreur/ajouter", name="admin_encadreur_ajouter")
-     */
-
-
-
-    /**
-     * @Route("/encadreur/modifier/{id}", name="encadreur_modifier")
-     */
-
-
-    /**
      * @Route("/encadreur/supprimer/{id}", name="admin_encadreur_supprimer")
      */
     public function supprimer(Request $request, $id)

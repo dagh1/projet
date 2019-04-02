@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,6 +40,16 @@ class Encadreur
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Encadrement", mappedBy="encadreur", orphanRemoval=true)
+     */
+    private $encadrements;
+
+    public function __construct()
+    {
+        $this->encadrements = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -91,4 +103,37 @@ class Encadreur
 
         return $this;
     }
+
+    /**
+     * @return Collection|Encadrement[]
+     */
+    public function getEncadrements(): Collection
+    {
+        return $this->encadrements;
+    }
+
+    public function addEncadrement(Encadrement $encadrement): self
+    {
+        if (!$this->encadrements->contains($encadrement)) {
+            $this->encadrements[] = $encadrement;
+            $encadrement->setEncadreur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEncadrement(Encadrement $encadrement): self
+    {
+        if ($this->encadrements->contains($encadrement)) {
+            $this->encadrements->removeElement($encadrement);
+            // set the owning side to null (unless already changed)
+            if ($encadrement->getEncadreur() === $this) {
+                $encadrement->setEncadreur(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

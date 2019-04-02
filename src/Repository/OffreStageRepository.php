@@ -29,6 +29,10 @@ class OffreStageRepository extends ServiceEntityRepository
             $qb->andWhere('s.titre like :titre')
                 ->setParameter('titre', '%' . $donnees['titre'] . '%');
         }
+        if (!empty($donnees['domaine'])) {
+            $qb->andWhere('s.domaine = :domaine')
+                ->setParameter('domaine', $donnees['domaine']);
+        }
 
         return $qb->getQuery()->getResult();
 
