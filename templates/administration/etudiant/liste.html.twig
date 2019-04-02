@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion etudiant{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des etudiants</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="text-left col-lg-1">Nom</th>
+                                <th class="text-left col-lg-1">Prenom</th>
+                                <th class="text-left col-lg-2">CIN</th>
+                                <th class="text-left col-lg-2">Numero Carte Etudiant</th>
+                                <th class="text-left col-lg-2">Universite</th>
+                                <th class="text-left col-lg-2">supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for etudiant in etudiants %}
+                                <tr>
+                                    <td class="text-left">{{ etudiant.utilisateur.nom }}</td>
+                                    <td class="text-left">{{ etudiant.utilisateur.prenom }}</td>
+                                    <td class="text-left">{{ etudiant.cin }}</td>
+                                    <td class="text-left">{{ etudiant.numCarteEtud }}</td>
+                                    <td class="text-left">{{ etudiant.universite.nom }}</td>
+
+
+                                    <td class="td-actions text-left">
+                                        <a href="{{ path('admin_etudiant_supprimer', {'id': etudiant.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
