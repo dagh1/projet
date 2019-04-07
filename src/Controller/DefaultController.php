@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Form\OffreStageChercherType;
+use App\Form\RapportChercherType;
 use App\Form\SocieteChercherType;
 use App\Form\StageChercherType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -39,6 +40,14 @@ class DefaultController extends AbstractController
             'form'=> $form->createView()
         ));
     }
+    public function formulaireChercherRapport(Request $request)
+    {
+        $form = $this->createForm(RapportChercherType::class);
+        $form->handleRequest($request);
 
+        return $this->render('formulaires_recherche/form_recherche_rapport.html.twig', array(
+            'form'=> $form->createView()
+        ));
+    }
 
 }

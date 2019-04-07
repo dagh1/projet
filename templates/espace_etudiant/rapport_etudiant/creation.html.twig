@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion RapportEtudiant{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Ajouter RapportEtudiant</h4>
+                    <div class="col-lg-6">
+                        {{ form_start(form) }}
+                        {{ form_row(form) }}
+                        <button class="btn btn-success">ajouter</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

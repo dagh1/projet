@@ -7,11 +7,10 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProjetRepository")
- *@ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="App\Repository\RapportEtudiantRepository")
+ *  @ORM\HasLifecycleCallbacks
  */
-
-class Projet
+class RapportEtudiant
 {
     /**
      * @ORM\Id()
@@ -21,25 +20,21 @@ class Projet
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=1000)
+     * @ORM\Column(type="string", length=255)
      */
-    private $sujet;
+    private $nom;
 
     /**
-     * @ORM\Column(type="string", length=2000)
+     * @ORM\Column(type="string", length=255)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $dateSoumettre;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Etudiant", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\etudiant")
      * @ORM\JoinColumn(nullable=false)
      */
     private $etudiant;
+
 
     /**
      * @ORM\Column(name="nom_fichier", type="string", length=180)
@@ -59,14 +54,14 @@ class Projet
         return $this->id;
     }
 
-    public function getSujet(): ?string
+    public function getNom(): ?string
     {
-        return $this->sujet;
+        return $this->nom;
     }
 
-    public function setSujet(string $sujet): self
+    public function setNom(string $nom): self
     {
-        $this->sujet = $sujet;
+        $this->nom = $nom;
 
         return $this;
     }
@@ -83,29 +78,18 @@ class Projet
         return $this;
     }
 
-    public function getDateSoumettre(): ?\DateTimeInterface
-    {
-        return $this->dateSoumettre;
-    }
-
-    public function setDateSoumettre(\DateTimeInterface $dateSoumettre): self
-    {
-        $this->dateSoumettre = $dateSoumettre;
-
-        return $this;
-    }
-
-    public function getEtudiant(): ?Etudiant
+    public function getEtudiant(): ?etudiant
     {
         return $this->etudiant;
     }
 
-    public function setEtudiant(Etudiant $etudiant): self
+    public function setEtudiant(?etudiant $etudiant): self
     {
         $this->etudiant = $etudiant;
 
         return $this;
     }
+
 
     public function setFile(UploadedFile $file)
     {
@@ -180,7 +164,7 @@ class Projet
     //folder
     public function getUploadDir()
     {
-        return 'uploads/projets';
+        return 'uploads/rapports';
     }
 
     // path to folder web
@@ -216,5 +200,4 @@ class Projet
 
         return $this;
     }
-
 }

@@ -9,7 +9,11 @@
         <div class="card">
             <div class="card-content">
                 <h4 class="card-title">Liste des rapports</h4>
+                <form action="{{ path('espace_etudiant_rapport_chercher') }}" method="get">
+                    {{ render(controller('App\\Controller\\DefaultController:formulaireChercherRapport')) }}
+                </form>
 
+                <hr style="border: 1px solid cadetblue">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>

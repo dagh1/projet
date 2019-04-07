@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion Projet{% endblock %}
+
+{% block body %}
+    <div class="col-md-8 col-md-offset-2">
+        <h3 class="title text-center">Menu projet</h3>
+        <br>
+        <div class="nav-center">
+            <ul class="nav nav-pills nav-pills-warning nav-pills-icons" role="tablist">
+
+                <li class="active">
+                    <a href="#description-1" role="tab" data-toggle="tab" aria-expanded="true">
+                        <i class="material-icons">info</i> Projet
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#schedule-1" role="tab" data-toggle="tab" aria-expanded="false">
+                        <i class="material-icons">location_on</i> Taches
+                    </a>
+                </li>
+
+                </li>
+                <li class="">
+                    <a href="#tasks-2" role="tab" data-toggle="tab" aria-expanded="false">
+                        <i class="material-icons">help_outline</i> Aides
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content active">
+            <div class="tab-pane active" id="description-1">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="card">
+                                <div class="card-content">
+                                    <h4 class="card-title">Liste des projets</h4>
+                                    <a href="{{ path('espace_etudiant_projet_creer') }}" class="btn btn-success"><i class="material-icons">control_point</i>
+                                        Ajouter</a>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th class="col-lg-3">titre</th>
+                                                <th class="col-lg-2">dateSoumettre</th>
+
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for projet in projets %}
+                                                <tr>
+                                                    <td>{{ projet.sujet|capitalize }}</td>
+                                                    <td>{{ projet.DateSoumettre|date('d/m/Y')}}</td>
+
+
+
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="schedule-1">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Location of the product</h4>
+                        <p class="category">
+                            More information here
+                        </p>
+                    </div>
+
+            <div class="tab-pane active" id="tasks-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Help center</h4>
+                        <p class="category">
+                            More information here
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        From the seamless transition of glass and metal to the streamlined profile, every detail was carefully considered to enhance your experience. So while its display is larger, the phone feels just right.
+                        <br>
+                        <br> Another Text. The first thing you notice when you hold the phone is how great it feels in your hand. The cover glass curves down around the sides to meet the anodized aluminum enclosure in a remarkable,
+                        simplified design.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
