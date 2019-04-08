@@ -21,12 +21,12 @@ class Projet
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=1000)
+     * @ORM\Column(type="string", length=255)
      */
     private $sujet;
 
     /**
-     * @ORM\Column(type="string", length=2000)
+     * @ORM\Column(type="text")
      */
     private $description;
 

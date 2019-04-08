@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion Projet{% endblock %}
+
+{% block body %}
+    <div class="col-md-8 col-md-offset-2">
+        <h3 class="title text-center">{{ projet.sujet|capitalize }}</h3>
+        <br>
+        <div class="nav-center">
+            <ul class="nav nav-pills nav-pills-warning nav-pills-icons" role="tablist">
+
+                <li class="active">
+                    <a href="#description" role="tab" data-toggle="tab" aria-expanded="true">
+                        <i class="material-icons">info</i> Déscription
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#taches" role="tab" data-toggle="tab" aria-expanded="false">
+                        <i class="material-icons">location_on</i> Taches
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#rapports" role="tab" data-toggle="tab" aria-expanded="false">
+                        <i class="material-icons">help_outline</i> Rapports
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#aide" role="tab" data-toggle="tab" aria-expanded="false">
+                        <i class="material-icons">help_outline</i> Aides
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="description">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Description about product</h4>
+                        <p class="category">
+                            More information here
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>
+                        <br> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <br>
+                        <br> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-pane" id="taches">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">taches about product</h4>
+                    </div>
+                    <div class="card-content">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>
+                        <br> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <br>
+                        <br> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-pane" id="rapports">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">rapports about product</h4>
+                        <p class="category">
+                           <a href="{{ path('espace_etudiant_rapport_projet_creer', {'id': projet.id}) }}">
+                               ajouter
+                           </a>
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>
+                        <br> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <br>
+                        <br> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="tab-pane" id="aide">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">aide about product</h4>
+                        <p class="category">
+                            More information here
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>
+                        <br> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <br>
+                        <br> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

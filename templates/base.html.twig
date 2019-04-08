@@ -40,7 +40,7 @@
         {% if is_granted('ROLE_ADMIN') %}
             {{ include('administration/includes/nav.html.twig') }}
         {% elseif is_granted('ROLE_ETUDIANT') %}
-            {{ include('espace_etudiant/includes/nav.html.twig') }}
+            {{ render(controller('App\\Controller\\EspaceEtudiant\\DefaultController:nav')) }}
         {% elseif is_granted('ROLE_ENCADREUR') %}
             {{ include('espace_encadreur/includes/nav.html.twig') }}
         {% endif %}

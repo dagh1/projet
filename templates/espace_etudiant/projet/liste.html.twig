@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion Projet{% endblock %}
+
+{% block body %}
+    {% for projet in projets %}
+        <a href="{{ path('espace_etudiant_projet_voir', {'id': projet.id}) }}">{{ projet.sujet }}</a><br>
+
+    {% endfor %}
+{% endblock %}

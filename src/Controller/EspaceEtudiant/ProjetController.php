@@ -5,6 +5,7 @@ namespace App\Controller\EspaceEtudiant;
 use App\Entity\Etudiant;
 use App\Entity\Projet;
 use App\Entity\Societe;
+use App\Entity\Tache;
 use App\Form\ProjetType;
 use App\Form\SocieteChercherType;
 use App\Repository\SocieteRepository;
@@ -19,19 +20,33 @@ class ProjetController extends AbstractController
      */
     public function liste(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $etudiant = $em->getRepository(Etudiant::class)->findOneBy(array('utilisateur' => $user));
 
+        $projets = $em->getRepository(Projet::class)->findBy(array('etudiant'=>$etudiant), array('id'=>'desc'));
 
-            $em = $this->getDoctrine()->getManager();
-
-        $projets = $em->getRepository(Projet::class)->findAll();
-
-        return $this->render('espace_etudiant/projet/gestion.html.twig', array(
+        return $this->render('espace_etudiant/projet/liste.html.twig', array(
             'projets' => $projets
         ));
-}
+    }
 
+    /**
+     * @Route("/projet/voir/{id}", name="espace_etudiant_projet_voir")
+     */
+    public function voir($id)
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $projet = $em->getRepository(Projet::class)->find($id);
 
+        $taches = $em->getRepository(Tache::class)->findBy(array('projet'=>$projet), array('id'=> 'desc'));
+
+        return $this->render('espace_etudiant/projet/voir.html.twig', array(
+            'projet' => $projet,
+            'taches'=> $taches
+        ));
+    }
 
     /**
      * @Route("/projet/gestion/creer", name="espace_etudiant_projet_creer")
@@ -60,5 +75,5 @@ class ProjetController extends AbstractController
             'form' => $form->createView()
         ));
 
-}
     }
+}

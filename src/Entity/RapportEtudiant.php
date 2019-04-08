@@ -30,12 +30,11 @@ class RapportEtudiant
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\etudiant")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Projet")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $etudiant;
-
-
+    private $projet;
+    
     /**
      * @ORM\Column(name="nom_fichier", type="string", length=180)
      */
@@ -78,14 +77,14 @@ class RapportEtudiant
         return $this;
     }
 
-    public function getEtudiant(): ?etudiant
+    public function getProjet(): ?Projet
     {
-        return $this->etudiant;
+        return $this->projet;
     }
 
-    public function setEtudiant(?etudiant $etudiant): self
+    public function setProjet(?Projet $projet): self
     {
-        $this->etudiant = $etudiant;
+        $this->projet = $projet;
 
         return $this;
     }
@@ -164,7 +163,7 @@ class RapportEtudiant
     //folder
     public function getUploadDir()
     {
-        return 'uploads/rapports';
+        return 'uploads/rapports_projets';
     }
 
     // path to folder web

@@ -4,6 +4,7 @@ namespace App\Controller\EspaceEtudiant;
 
 use App\Entity\Etudiant;
 
+use App\Entity\Projet;
 use App\Entity\RapportEtudiant;
 
 use App\Form\RapportEtudiantType;
@@ -15,27 +16,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class RapportEtudiantController extends AbstractController
 {
     /**
-     * @Route("/rapport_etudiant/gestion", name="espace_etudiant_rapport_et_gestion")
-     */
-    public function liste(Request $request)
-    {
-
-
-        $em = $this->getDoctrine()->getManager();
-
-        $rapports = $em->getRepository(RapportEtudiant::class)->findAll();
-
-        return $this->render('espace_etudiant/rapport_etudiant/gestion.html.twig', array(
-            'rapports' => $rapports
-        ));
-    }
-
-
-    /**
-     * @Route("/rapport_etudiant/gestion/creer", name="espace_etudiant_rapport_et_creer")
+     * @Route("/rapport_projet/creer/{id}", name="espace_etudiant_rapport_projet_creer")
      */
 
-    public function ajout(Request $request)
+    public function ajout(Request $request, Projet $projet)
     {
         $rapportEtudiant = new RapportEtudiant();
 
@@ -44,13 +28,11 @@ class RapportEtudiantController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $user = $this->getUser();
-            $etudiant = $em->getRepository(Etudiant::class)->findOneBy(array('utilisateur' => $user));
-            $rapportEtudiant->setEtudiant($etudiant);
+            $rapportEtudiant->setProjet($projet);
             $em->persist($rapportEtudiant);
             $em->flush();
 
-            return $this->redirectToRoute('espace_etudiant_rapport_et_gestion');
+            return $this->redirectToRoute('espace_etudiant_projet_voir', array('id'=> $projet->getId()));
         }
 
         return $this->render('espace_etudiant/rapport_etudiant/creation.html.twig', array(
