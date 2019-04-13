@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="">
+            <div class="card" id="profile-main">
+
+                <div class="card-content">
+
+                    <h3>Welcome {{ etudiant.utilisateur.prenom }}!</h3>
+
+
+                    <div role="tabpanel">
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#profile11" aria-controls="profile11" role="tab"
+                                                  data-toggle="tab" aria-expanded="true">Profile</a>
+                            </li>
+
+
+                        </ul>
+                        <div class="card-avatar">
+                            <a href="#pablo">
+                                <img class="img" src="../../assets/img/faces/avatar.png">
+                            </a>
+                        </div>
+                        <div class="tab-content">
+
+                            <div role="tabpanel" class="tab-pane active" id="profile11">
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="p-15">
+                                            <h4>Generale</h4>
+                                            <hr>
+                                            <div class="row m-l-5">
+                                                <div class="col-sm-6 p-5">
+                                                    <p><strong>Designation</strong></p>
+                                                    <p><strong>Universite</strong></p>
+                                                    <p><strong>Pays</strong></p>
+                                                    <p><strong>Domaine</strong></p>
+                                                    <p><strong>Carte Etudiant</strong></p>
+                                                </div>
+                                                <div class="col-sm-6 p-10 p-5">
+                                                    <p>Etudiant</p>
+                                                    <p>{{ etudiant.universite.nom }}</p>
+                                                    <p>Tunisie</p>
+                                                    <p>{{ etudiant.domaine.nom }}</p>
+                                                    <p>{{ etudiant.numCarteEtud }}</p>
+
+                                                </div>
+                                            </div>
+                                            <h4>Contact</h4>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p><i class="zmdi zmdi-phone"></i>Telephone</p>
+                                                    <p><i class="zmdi zmdi-email"></i>Email</p>
+                                                </div>
+                                                <div class="col-sm-6 p-10">
+                                                    <p>+216</p>
+                                                    <p>{{ etudiant.utilisateur.email }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}

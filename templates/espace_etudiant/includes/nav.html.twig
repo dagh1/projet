@@ -66,13 +66,21 @@
                         <i class="material-icons">person</i>
                         <p class="hidden-lg hidden-md">Profile</p>
                     </a>
+                    <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="{{ path('espace_etudiant_profil') }}">voir profil</a>
+                            </li>
+                        <li>
+                            <a href="{{ path('espace_etudiant_compte') }}">parametres du compte</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_logout') }}">deconnexion</a>
+                        </li>
+
+                    </ul>
                 </li>
-                <li>
-                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">settings</i>
-                        <p class="hidden-lg hidden-md">Settings</p>
-                    </a>
-                </li>
+
                 <li class="separator hidden-lg hidden-md"></li>
             </ul>
         </div>
