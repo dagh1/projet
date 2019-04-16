@@ -76,4 +76,26 @@ class ProjetController extends AbstractController
         ));
 
     }
+
+
+    /**
+     * @Route("/projet/modifier/{id}", name="espace_etudiant_projet_modifier")
+     */
+    public function modifier(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $rapport = $em->getRepository(Projet::class)->find($id);
+
+        $form = $this->createForm(projetType::class, $rapport);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+            return $this->redirectToRoute('espace_etudiant_projet_voir');
+        }
+
+        return $this->render('espace_etudiant/projet/modifier.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
 }

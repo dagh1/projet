@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card" id="profile-main">
+
+                <div class="card-content">
+
+                    <h3>Welcome {{ encadreur.utilisateur.prenom }}!</h3>
+
+                    {% for projet in projest %}
+                        <div role="tabpanel">
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#projet11" aria-controls="projet11" role="tab"
+                                                      data-toggle="tab" aria-expanded="true">{{ projet.sujet }}</a>
+                                </li>
+                                <li class=""><a href="#rapport11" aria-controls="rapport11" role="tab" data-toggle="tab"
+                                                aria-expanded="false">Rapport</a>
+                                </li>
+
+
+                            </ul>
+
+                            <div class="tab-content">
+
+                                <div role="tabpanel" class="tab-pane active" id="projet11">
+
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="card" style="min-height: 485px">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Task List</h4>
+                                            </div>
+                                            <div class="card-content">
+
+                                                <table class="table">
+                                                    <tbody>
+                                                    {% for tache in projet.tache %}
+                                                        <tr>
+                                                            <td>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" name="optionsCheckboxes"
+                                                                               checked=""><span
+                                                                                class="checkbox-material"><span
+                                                                                    class="check"></span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>{{ tache.titre|capitalize }} </td>
+                                                            <td class="td-actions text-right">
+                                                                <button type="button" rel="tooltip" href="{{ path('espace_encadreur_tache_modifier', {'id': tache.id}) }}"
+                                                                        class="btn btn-primary btn-simple btn-xs"
+                                                                        data-original-title="Edit Task">
+                                                                    <i class="material-icons">edit</i>
+                                                                </button>
+                                                                <button type="button" rel="tooltip" href="{{ path('espace_encadreur_tache_supprimer', {'id': tache.id}) }}"
+                                                                        class="btn btn-danger btn-simple btn-xs"
+                                                                        data-original-title="Remove">
+                                                                    <i class="material-icons">close</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane" id="rapport11">
+                                    <div class="widget p-25">
+<P>afficage rapport</P>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}

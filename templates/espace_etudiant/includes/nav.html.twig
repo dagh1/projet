@@ -51,14 +51,14 @@
                         <p class="hidden-lg hidden-md">projets</p>
                     </a>
                     <ul class="dropdown-menu">
-                        {% for projet in projest %}
+
                             <li>
-                                <a href="{{ path('espace_etudiant_projet_voir', {'id': projet.id}) }}">{{ projet.sujet }}</a>
+                                <a href="{{ path('espace_etudiant_projet_gestion') }}">liste des projets</a>
                             </li>
-                            <li>
-                                <a href="{{ path('espace_etudiant_projet_gestion') }}" class="btn btn-info">Voir ous</a>
-                            </li>
-                        {% endfor %}
+                        <li>
+                            <a href="{{ path('espace_etudiant_projet_creer' )}}">creer un projet</a>
+                        </li>
+
                     </ul>
                 </li>
                 <li>

@@ -32,6 +32,11 @@ class Tache
     private $dateInsert;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $check='False';
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Projet")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -77,6 +82,15 @@ class Tache
 
         return $this;
     }
+    public function getCheck()
+    {
+        return $this->check;
+    }
+    public function setCheck($check): void
+    {
+        $this->check = $check;
+    }
+
 
     public function getProjet(): ?Projet
     {

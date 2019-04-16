@@ -4,7 +4,23 @@
 
 {% block body %}
     {% for projet in projets %}
-        <a href="{{ path('espace_etudiant_projet_voir', {'id': projet.id}) }}">{{ projet.sujet }}</a><br>
+        <div class="col-md-11">
+            <div class="card card-testimonial">
+                <div class="card-avatar">
+                    <a>
+                        <i class="material-icons">assignment</i>
+                    </a>
+                </div>
+                <div class="card-content">
 
+                    <br>
+                    <h6>Sujet du projet </h6>
+                    <a href="{{ path('espace_etudiant_projet_voir', {'id': projet.id}) }}">{{ projet.sujet }}</a><br>
+                    <h6>Description:</h6>
+                    <p>{{ projet.description }}</p>
+                </div>
+
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}

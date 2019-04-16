@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Administration;
+namespace App\Controller\EspaceEncadreur;
 
 use App\Entity\Tache;
 use App\Form\TacheType;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TacheController extends AbstractController
 {
     /**
-     * @Route("/tache", name="admin_tache_liste")
+     * @Route("/tache", name="espace_encadreur_tache_liste")
      */
     public function liste()
     {
@@ -19,13 +19,13 @@ class TacheController extends AbstractController
 
         $taches = $em->getRepository(Tache::class)->findAll();
 
-        return $this->render('administration/tache/liste.html.twig', array(
+        return $this->render('espace_encadreur/tache/liste.html.twig', array(
             'taches' => $taches
         ));
     }
 
     /**
-     * @Route("/tache/ajouter", name="admin_tache_ajouter")
+     * @Route("/tache/ajouter", name="espace_encadreur_tache_ajouter")
      */
     public function ajout(Request $request)
     {
@@ -39,17 +39,17 @@ class TacheController extends AbstractController
             $em->persist($tache);
             $em->flush();
 
-            return $this->redirectToRoute('admin_tache_liste');
+            return $this->redirectToRoute('eespace_encadreur_mesetudiants');
         }
 
-        return $this->render('administration/tache/ajouter.html.twig', array(
+        return $this->render('espace_encadreur/tache/ajouter.html.twig', array(
             'form' => $form->createView()
         ));
     }
 
 
     /**
-     * @Route("/tache/modifier/{id}", name="admin_tache_modifier")
+     * @Route("/tache/modifier/{id}", name="espace_encadreur_tache_modifier")
      */
     public function modifier(Request $request, $id)
     {
@@ -61,16 +61,16 @@ class TacheController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('admin_tache_liste');
+            return $this->redirectToRoute('espace_encadreur_tache_liste');
         }
 
-        return $this->render('administration/tache/modifier.html.twig', array(
+        return $this->render('espace_encadreur/tache/modifier.html.twig', array(
             'form' => $form->createView()
         ));
     }
 
     /**
-     * @Route("/tache/supprimer/{id}", name="admin_tache_supprimer")
+     * @Route("/tache/supprimer/{id}", name="espace_encadreur_tache_supprimer")
      */
     public function supprimer(Request $request, $id)
     {
@@ -83,7 +83,7 @@ class TacheController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_tache_liste');
+        return $this->redirectToRoute('espace_encadreur_mesetudiants');
 
     }
 

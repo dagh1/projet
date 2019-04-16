@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card" id="profile-main">
+
+                <div class="card-content">
+
+                    <h3>Welcome {{ encadreur.utilisateur.prenom }}!</h3>
+
+
+
+                    <div role="tabpanel">
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#profile11" aria-controls="profile11" role="tab" data-toggle="tab" aria-expanded="true">edit copmte</a>
+                            </li>
+                            <li class=""><a href="#email11" aria-controls="messages11" role="tab" data-toggle="tab" aria-expanded="false">edit mail</a>
+                            </li>
+                            <li class=""><a href="#pass11" aria-controls="settings11" role="tab" data-toggle="tab" aria-expanded="false">edit password</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div role="tabpanel" class="tab-pane active" id="profile11">
+                                {{ render(controller('App\\Controller\\Account\\AccountController:edit')) }}
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="email11">
+                                <div class="widget p-25">
+
+                                    {{ render(controller('App\\Controller\\Account\\AccountController:email')) }}
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="pass11">
+                                {{ render(controller('App\\Controller\\Account\\AccountController:password')) }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}

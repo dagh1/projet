@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Encadrement Etudiants{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des mes etudiants </h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="text-left col-lg-2">Nom</th>
+                                <th class="text-left col-lg-3">Prenom</th>
+                                <th class="text-left col-lg-2">CIN</th>
+                                <th class="text-left col-lg-2">Num Carte Etudiant</th>
+                                <th class="text-left col-lg-1"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for etudiant in etudiants %}
+                                <tr>
+                                    <td class="text-left">{{ etudiant.utilisateur.nom }}</td>
+                                    <td class="text-left">{{ etudiant.utilisateur.prenom }}</td>
+                                    <td class="text-left">{{ etudiant.cin }}</td>
+                                    <td class="text-left">{{ etudiant.numCarteEtud }}</td>
+                                    <td class="td-actions text-left">
+                                        <a href="{{ path('espace_encadreur_consulter', {'id': etudiant.id}) }}"
+                                           rel="tooltip" class="btn btn-danger btn-simple"
+                                           data-original-title="" title="">
+                                            <i class="material-icons">explore</i>
+
+                                        </a>
+                                        <a href="#"
+                                           data-href="{{ path('espace_encadreur_encadrement_supprimer', {'id': etudiant.id}) }}"
+                                           title="Supprimer de ma liste"
+                                           id="remove-from-list"
+                                           style="display: {{ etudiant.id in ids ? 'block' : 'none' }}">
+                                            <i class="fa fa-heart icon" style="color: deeppink;">Retirer</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('administration/js/encadrement.js') }}"></script>
+{% endblock %}

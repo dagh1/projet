@@ -5,6 +5,7 @@ namespace App\Controller\EspaceEncadreur;
 use App\Entity\Encadrement;
 use App\Entity\Encadreur;
 use App\Entity\Etudiant;
+use App\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -86,6 +87,41 @@ class EncadrementController extends AbstractController
             }
         }
         return new JsonResponse();
+    }
+
+
+
+    /**
+     * @Route("/mesEtudiants", name="espace_encadreur_mesetudiants")
+     * @Security("is_granted('ROLE_ENCADREUR')")
+     */
+    public function listeconsulter(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $encadreur = $em->getRepository(Encadreur::class)->findOneBy(array('utilisateur' => $user));
+
+        $encadrements = $em->getRepository(Encadrement::class)->findBy(array('encadreur' => $encadreur), array('id' => 'desc'));
+
+        return $this->render('espace_encadreur/etudiant/mesetudiant.html.twig', array(
+            'encadrements' => $encadrements,
+            )
+        );
+    }
+
+    /**
+     * @Route("/consulter", name="espace_encadreur_consulter")
+     * @Security("is_granted('ROLE_ENCADREUR')")
+     */
+    public function projet(Request $request,Etudiant $etudiant)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $projets = $em->getRepository(Projet::class)->findBy(array('etudiant'=>$etudiant), array('id'=>'desc'));
+
+        return $this->render('espace_encadreur/etudiant/mesetudiant.html.twig', array(
+                'projets'=> $projets
+            )
+        );
     }
 
 }
