@@ -58,13 +58,11 @@
                             <tbody>
                             {% for tache in taches %}
 
-
                             <tr>
-                                <td>
+                                <td style="width: 40px;">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="optionsCheckboxes" checked={{ tache.check }}><span
-                                                    class="checkbox-material"><span class="check"></span></span>
+                                            <input type="checkbox" name="optionsCheckboxes-{{ tache.id }}" {{ tache.check ? 'checked' : '' }}>
                                         </label>
                                     </div>
                                 </td>

@@ -12,7 +12,6 @@
                     <h3>Welcome {{ etudiant.utilisateur.prenom }}!</h3>
 
 
-
                     <div role="tabpanel">
                         <ul class="nav nav-pills">
                             <li class="active"><a href="#profile11" aria-controls="profile11" role="tab" data-toggle="tab" aria-expanded="true">edit copmte</a>
@@ -27,18 +26,19 @@
                         <div class="tab-content">
 
                             <div role="tabpanel" class="tab-pane active" id="profile11">
-                                {{ render(controller('App\\Controller\\Account\\AccountController:edit')) }}
+
                             </div>
 
                             <div role="tabpanel" class="tab-pane" id="email11">
                                 <div class="widget p-25">
 
-                                    {{ render(controller('App\\Controller\\Account\\AccountController:email')) }}
+
 
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="pass11">
-                                {{ render(controller('App\\Controller\\Account\\AccountController:password')) }}
+
+
                             </div>
                         </div>
                     </div>

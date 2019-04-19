@@ -53,6 +53,10 @@ class Projet
 
     private $tempFilename;
 
+    public function __construct()
+    {
+        $this->dateSoumettre = new \DateTime();
+    }
 
     public function getId(): ?int
     {

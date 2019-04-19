@@ -2,6 +2,7 @@
 
 namespace App\Controller\EspaceEncadreur;
 
+use App\Entity\Projet;
 use App\Entity\Tache;
 use App\Form\TacheType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,9 +26,9 @@ class TacheController extends AbstractController
     }
 
     /**
-     * @Route("/tache/ajouter", name="espace_encadreur_tache_ajouter")
+     * @Route("/tache/ajouter/projet/{id}", name="espace_encadreur_tache_ajouter")
      */
-    public function ajout(Request $request)
+    public function ajout(Request $request, Projet $projet)
     {
         $tache = new Tache();
 
@@ -36,10 +37,11 @@ class TacheController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $tache->setProjet($projet);
             $em->persist($tache);
             $em->flush();
 
-            return $this->redirectToRoute('eespace_encadreur_mesetudiants');
+            return $this->redirectToRoute('espace_encadreur_consulter_projet');
         }
 
         return $this->render('espace_encadreur/tache/ajouter.html.twig', array(
@@ -51,17 +53,18 @@ class TacheController extends AbstractController
     /**
      * @Route("/tache/modifier/{id}", name="espace_encadreur_tache_modifier")
      */
-    public function modifier(Request $request, $id)
+    public function modifier(Request $request,Projet $projet)
     {
         $em = $this->getDoctrine()->getManager();
-        $tache = $em->getRepository(Tache::class)->find($id);
+        $tache = $em->getRepository(Tache::class)->find($projet->getId());
 
         $form = $this->createForm(TacheType::class, $tache);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $tache->setProjet($projet);
             $em->flush();
-            return $this->redirectToRoute('espace_encadreur_tache_liste');
+            return $this->redirectToRoute('espace_encadreur_consulter_projet');
         }
 
         return $this->render('espace_encadreur/tache/modifier.html.twig', array(
@@ -72,10 +75,10 @@ class TacheController extends AbstractController
     /**
      * @Route("/tache/supprimer/{id}", name="espace_encadreur_tache_supprimer")
      */
-    public function supprimer(Request $request, $id)
+    public function supprimer(Request $request,Projet $projet)
     {
         $em = $this->getDoctrine()->getManager();
-        $tache = $em->getRepository(Tache::class)->find($id);
+        $tache = $em->getRepository(Tache::class)->find($projet->getId());
 
         if($tache)
         {
@@ -83,7 +86,7 @@ class TacheController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirectToRoute('espace_encadreur_mesetudiants');
+        return $this->redirectToRoute('espace_encadreur_consulter_projet');
 
     }
 
