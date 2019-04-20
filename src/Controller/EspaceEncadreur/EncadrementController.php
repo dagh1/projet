@@ -103,9 +103,8 @@ class EncadrementController extends AbstractController
         $encadreur = $em->getRepository(Encadreur::class)->findOneBy(array('utilisateur' => $user));
 
         $encadrements = $em->getRepository(Encadrement::class)->findBy(array('encadreur' => $encadreur), array('id' => 'desc'));
-//$etudiants =$em->getRepository(Etudiant::class )->findBy(array('encadrements'=> $encadrements,array('id'=>'desc')));
         return $this->render('espace_encadreur/etudiant/mesetudiant.html.twig', array(
-                'encadrements' => $encadrements,
+            'encadrements' => $encadrements,
             )
         );
     }
