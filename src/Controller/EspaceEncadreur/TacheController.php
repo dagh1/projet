@@ -4,6 +4,10 @@ namespace App\Controller\EspaceEncadreur;
 
 use App\Entity\Projet;
 use App\Entity\Tache;
+use DateInterval;
+use DateTimeInterface;
+use DateTimeZone;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Form\TacheType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,6 +41,7 @@ class TacheController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $tache->setDateInsert(new \DateTime());
             $tache->setProjet($projet);
             $em->persist($tache);
             $em->flush();

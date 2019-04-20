@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TacheRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Tache
 {
@@ -27,7 +30,8 @@ class Tache
     private $description;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
+     *
      */
     private $dateInsert;
 
@@ -78,8 +82,7 @@ class Tache
 
     public function setDateInsert(\DateTimeInterface $dateInsert): self
     {
-        $this->dateInsert = $dateInsert;
-
+        $this->dateInsert = new \DateTime("now");
         return $this;
     }
     public function getCheck()
