@@ -18,6 +18,23 @@ class EtudiantRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Etudiant::class);
     }
+    public function chercher($donnees)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->orderBy('s.nom', 'ASC');
+
+        if (!empty($donnees['nom'])) {
+            $qb->andWhere('s.nom like :nom')
+                ->setParameter('nom', '%' . $donnees['nom'] . '%');
+        }
+        if (!empty($donnees['prenom'])) {
+            $qb->andWhere('s.prenom = :prenom')
+                ->setParameter('prenom', $donnees['prenom']);
+        }
+
+        return $qb->getQuery()->getResult();
+
+    }
 
     // /**
     //  * @return Etudiant[] Returns an array of Etudiant objects
