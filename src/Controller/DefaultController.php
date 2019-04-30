@@ -4,7 +4,7 @@ namespace App\Controller;
 
 
 
-use App\Form\OffreStageChercherType;
+use App\Form\EtudiantChercherType;
 use App\Form\RapportChercherType;
 use App\Form\SocieteChercherType;
 use App\Form\StageChercherType;
@@ -49,5 +49,16 @@ class DefaultController extends AbstractController
             'form'=> $form->createView()
         ));
     }
+
+    public function formulaireChercherEtudiant(Request $request)
+    {
+        $form = $this->createForm(EtudiantChercherType::class);
+        $form->handleRequest($request);
+
+        return $this->render('formulaires_recherche/form_recherche_etudiant.html.twig', array(
+            'form'=> $form->createView()
+        ));
+    }
+
 
 }

@@ -38,4 +38,19 @@ class EtudiantController extends AbstractController
         ));
     }
 
+    /**
+     * @Route("/etudiant/chercher", name="espace_encadreur_etudiant_chercher")
+     */
+    public function chercher(Request $request)
+    {
+        $donnees = $request->query->all();
+
+        $em = $this->getDoctrine()->getManager();
+        $etudiants = $em->getRepository(Etudiant ::class)->chercher($donnees);
+
+        return $this->render('espace_encadreur/etudiant/liste.html.twig', array(
+            'etudiants' => $etudiants,
+        ));
+
 }
+    }
