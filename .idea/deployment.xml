@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="projet1.0">
+      <paths name="pfe1">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

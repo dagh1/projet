@@ -1,0 +1,16 @@
+<li class="timeline-inverted">
+    <div class="timeline-image danger">
+        <img src="{{ asset('administration/img/faces/avatar.png') }}">
+    </div>
+    <div class="timeline-panel">
+        <div class="timeline-heading">
+            <span class="label label-danger">{{ commentaire.utilisateur.prenom }}</span>
+        </div>
+        <div class="timeline-body">
+            <p>{{ commentaire.description }}</p>
+        </div>
+        <h6>
+            <i class="ti-time"></i> {{ commentaire.date|date('d-m-Y à h:i') }}
+        </h6>
+    </div>
+</li>

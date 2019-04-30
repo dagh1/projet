@@ -2,6 +2,7 @@
 
 namespace App\Controller\EspaceEncadreur;
 
+use App\Entity\Commentaire;
 use App\Entity\Encadrement;
 use App\Entity\Encadreur;
 use App\Entity\Etudiant;
@@ -91,7 +92,6 @@ class EncadrementController extends AbstractController
     }
 
 
-
     /**
      * @Route("/mesEtudiants", name="espace_encadreur_mesetudiants")
      * @Security("is_granted('ROLE_ENCADREUR')")
@@ -104,7 +104,7 @@ class EncadrementController extends AbstractController
 
         $encadrements = $em->getRepository(Encadrement::class)->findBy(array('encadreur' => $encadreur), array('id' => 'desc'));
         return $this->render('espace_encadreur/etudiant/mesetudiant.html.twig', array(
-            'encadrements' => $encadrements,
+                'encadrements' => $encadrements,
             )
         );
     }
@@ -113,13 +113,13 @@ class EncadrementController extends AbstractController
      * @Route("/consulter/etudiant/{id}", name="espace_encadreur_consulter")
      * @Security("is_granted('ROLE_ENCADREUR')")
      */
-    public function listeProjets(Request $request,Etudiant $etudiant)
+    public function listeProjets(Request $request, Etudiant $etudiant)
     {
         $em = $this->getDoctrine()->getManager();
-        $projets = $em->getRepository(Projet::class)->findBy(array('etudiant'=>$etudiant), array('id'=>'desc'));
+        $projets = $em->getRepository(Projet::class)->findBy(array('etudiant' => $etudiant), array('id' => 'desc'));
 
         return $this->render('espace_encadreur/etudiant/consulter.html.twig', array(
-                'projets'=> $projets
+                'projets' => $projets
             )
         );
     }
@@ -134,11 +134,13 @@ class EncadrementController extends AbstractController
 
         $projet = $em->getRepository(Projet::class)->find($id);
 
-        $taches = $em->getRepository(Tache::class)->findBy(array('projet'=>$projet), array('id'=> 'desc'));
+        $taches = $em->getRepository(Tache::class)->findBy(array('projet' => $projet), array('id' => 'desc'));
+        $commentaires = $em->getRepository(Commentaire::class)->findBy(array('projet' => $projet));
 
         return $this->render('espace_encadreur/etudiant/projet.html.twig', array(
             'projet' => $projet,
-            'taches'=> $taches
+            'taches' => $taches,
+            'commentaires' => $commentaires
         ));
     }
 }
