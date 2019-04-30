@@ -31,20 +31,25 @@ class Tache
 
     /**
      * @ORM\Column(type="datetime")
-     *
      */
-    private $dateInsert;
+    private $createdAt;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", name="tache_check")
      */
-    private $check='False';
+    private $check;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Projet")
      * @ORM\JoinColumn(nullable=false)
      */
     private $projet;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+        $this->check = false ;
+    }
 
     public function getId(): ?int
     {
@@ -75,25 +80,29 @@ class Tache
         return $this;
     }
 
-    public function getDateInsert(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->dateInsert;
+        return $this->createdAt;
     }
 
-    public function setDateInsert(\DateTimeInterface $dateInsert): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->dateInsert = new \DateTime("now");
+        $this->createdAt = $createdAt;
+
         return $this;
     }
-    public function getCheck()
+
+    public function getCheck(): ?bool
     {
         return $this->check;
     }
-    public function setCheck($check): void
+
+    public function setCheck(bool $check): self
     {
         $this->check = $check;
-    }
 
+        return $this;
+    }
 
     public function getProjet(): ?Projet
     {
@@ -106,4 +115,5 @@ class Tache
 
         return $this;
     }
+
 }

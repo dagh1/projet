@@ -41,12 +41,11 @@ class TacheController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $tache->setDateInsert(new \DateTime());
             $tache->setProjet($projet);
             $em->persist($tache);
             $em->flush();
 
-            return $this->redirectToRoute('espace_encadreur_consulter_projet');
+            return $this->redirectToRoute('espace_encadreur_consulter_projet', array('id' => $projet->getId()));
         }
 
         return $this->render('espace_encadreur/tache/ajouter.html.twig', array(
@@ -58,7 +57,7 @@ class TacheController extends AbstractController
     /**
      * @Route("/tache/modifier/{id}", name="espace_encadreur_tache_modifier")
      */
-    public function modifier(Request $request,Projet $projet)
+    public function modifier(Request $request, Projet $projet)
     {
         $em = $this->getDoctrine()->getManager();
         $tache = $em->getRepository(Tache::class)->find($projet->getId());
@@ -68,6 +67,7 @@ class TacheController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $tache->setProjet($projet);
+
             $em->flush();
             return $this->redirectToRoute('espace_encadreur_consulter_projet');
         }
@@ -80,18 +80,17 @@ class TacheController extends AbstractController
     /**
      * @Route("/tache/supprimer/{id}", name="espace_encadreur_tache_supprimer")
      */
-    public function supprimer(Request $request,Projet $projet)
+    public function supprimer(Request $request, Tache $tache)
     {
-        $em = $this->getDoctrine()->getManager();
-        $tache = $em->getRepository(Tache::class)->find($projet->getId());
+        $idProjet = $tache->getProjet()->getId();
 
-        if($tache)
-        {
+        $em = $this->getDoctrine()->getManager();
+        if ($tache) {
             $em->remove($tache);
             $em->flush();
         }
 
-        return $this->redirectToRoute('espace_encadreur_consulter_projet');
+        return $this->redirectToRoute('espace_encadreur_consulter_projet', array('id' => $idProjet));
 
     }
 

@@ -6,76 +6,103 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card" id="profile-main">
-
                 <div class="card-content">
-
                     <h3>projet de {{ projet.etudiant.utilisateur.prenom }} {{ projet.etudiant.utilisateur.nom }}</h3>
 
-
-
                     <div role="tabpanel">
-                        <div class="nav nav-pills"  role="tab" data-toggle="tab">
-                            <li class="active" disabled="disabled"><a href="#profile11" aria-controls="profile11" role="tab" data-toggle="tab">description de projet</a>
+                        <div class="nav nav-pills" role="tab" data-toggle="tab">
+                            <li class="active" disabled="disabled">
+                                <a href="#profile11" aria-controls="profile11" role="tab" data-toggle="tab">description
+                                    de projet</a>
                             </li>
-
                         </div>
-
                         <div class="tab-content">
-
                             <div role="tabpanel" class="tab-pane active" id="profile11">
-                               {{ projet.description }}
-
+                                {{ projet.description }}
                             </div>
-
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
+
+            <div class="">
+                <ul class="timeline timeline-simple">
+                    {% for commentaire in commentaires %}
+                        {{ include('commentaire/commentaire.html.twig') }}
+                    {% endfor %}
+                    <li class="timeline-inverted">
+                        <div class="timeline-image danger">
+                            <img src="{{ asset('administration/img/comment.jpg') }}">
+                        </div>
+                        <div class="timeline-panel">
+                            <form action="{{ path('espace_etudiant_encadreur_commentaire') }}" method="post"
+                                  id="ajouter-commentaire">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message-commentaire" name="message" rows="3"
+                                              required
+                                              placeholder="Commentaire..."></textarea>
+                                </div>
+                                <input type="hidden" name="idProjet" value="{{ projet.id }}">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-info" value="Enoyer">
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
+
         <div class="col-md-6">
-        <div class="card" style="min-height: 485px">
-            <div class="card-header">
-                <h4 class="card-title">Task List</h4>
-            </div>
-            <div class="card-content">
-                <div class="dropdown pull-right">
-                    <button type="button" class="btn btn-round btn-info ">
-                  <a  href="{{ path('espace_encadreur_tache_ajouter', {'id': projet.id})  }}"><i  class="material-icons">add</i></a>
-
-                    </button>
-
+            <div class="card" style="min-height: 485px">
+                <div class="card-header">
+                    <h4 class="card-title">Task List</h4>
                 </div>
-                <table class="table">
-                    <tbody>
-                    {% for tache in taches %}
-                    <tr>
-                        <td>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled="disabled">
-                                </label>
-                            </div>
-                        </td>
-                        <td>{{ tache.description }}</td>
-                        <td class="td-actions text-right">
-                            <button  type="button" rel="tooltip" title="" class="btn btn-primary btn-simple btn-xs" data-original-title="Edit Task">
-                                <a  href="{{ path('espace_encadreur_tache_modifier', {'id': projet.id})  }}"><i  class="material-icons">edit</i>
-                                </a></button>
-                            <button type="button"  href="{{ path('espace_encadreur_tache_supprimer', {'id': projet.id}) }}" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
-                                <a href="{{ path('espace_encadreur_tache_supprimer', {'id': projet.id}) }}"  > <i class="material-icons">close</i></a>
-                            </button>
-                        </td>
-                    </tr>
+                <div class="card-content">
+                    <div class="dropdown pull-right">
+                        <button type="button" class="btn btn-round btn-info ">
+                            <a href="{{ path('espace_encadreur_tache_ajouter', {'id': projet.id}) }}"><i
+                                        class="material-icons">add</i></a>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        {% for tache in taches %}
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="optionsCheckboxes-{{ tache.id }}" {{ tache.check ? 'checked' : '' }}
+                                                   disabled="disabled">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>{{ tache.description }}</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title=""
+                                            class="btn btn-primary btn-simple btn-xs" data-original-title="Edit Task">
+                                        <a href="{{ path('espace_encadreur_tache_modifier', {'id': tache.id}) }}"><i
+                                                    class="material-icons">edit</i>
+                                        </a></button>
 
-{% endfor %}
-                    </tbody>
-                </table>
+                                    <button type="button" rel="tooltip" title=""
+                                            class="btn btn-danger btn-simple btn-xs confirm-supp"
+                                            data-original-title="Remove"
+                                            href="{{ path('espace_encadreur_tache_supprimer', {'id': tache.id}) }}">
+                                        <i class="material-icons">close</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
 

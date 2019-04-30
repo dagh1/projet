@@ -22,7 +22,7 @@ class Commentaire
     private $description;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", name="date_envoi")
      */
     private $date;
 
@@ -33,10 +33,15 @@ class Commentaire
     private $utilisateur;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tache")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Projet")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $tache;
+    private $projet;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -79,15 +84,17 @@ class Commentaire
         return $this;
     }
 
-    public function getTache(): ?Tache
+    public function getProjet(): ?Projet
     {
-        return $this->tache;
+        return $this->projet;
     }
 
-    public function setTache(?Tache $tache): self
+    public function setProjet(?Projet $projet): self
     {
-        $this->tache = $tache;
+        $this->projet = $projet;
 
         return $this;
     }
+
+
 }
