@@ -1,220 +1,350 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Gestion societe{% endblock %}
+
 
 {% block body %}
+    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-content">
-
-
-
-                    <!-- Header -->
-                    <header background-image="" >
-                        <div class="container">
-                            <div class="row">
-                                <h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-                                <p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-                            </div>
-                        </div>
-                    </header>
-                    <!-- /Header -->
-
-                    <!-- Intro -->
-                    <div class="container text-center">
-                        <br> <br>
-                        <h2 class="thin">The best place to tell people why they are here</h2>
-                        <p class="text-muted">
-                            The difference between involvement and commitment is like an eggs-and-ham breakfast:<br>
-                            the chicken was involved; the pig was committed.
-                        </p>
-                    </div>
-                    <!-- /Intro-->
-
-                    <!-- Highlights - jumbotron -->
-                    <div class="jumbotron top-space">
-                        <div class="container">
-
-                            <h3 class="text-center thin">Reasons to use this template</h3>
-
-                            <div class="row">
-                                <div class="col-md-3 col-sm-6 highlight">
-                                    <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Bootstrap-powered</h4></div>
-                                    <div class="h-body text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquid adipisci aspernatur. Soluta quisquam dignissimos earum quasi voluptate. Amet, dignissimos, tenetur vitae dolor quam iusto assumenda hic reprehenderit?</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 highlight">
-                                    <div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Fat-free</h4></div>
-                                    <div class="h-body text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, commodi, sequi quis ad fugit omnis cumque a libero error nesciunt molestiae repellat quos perferendis numquam quibusdam rerum repellendus laboriosam reprehenderit! </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 highlight">
-                                    <div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Creative Commons</h4></div>
-                                    <div class="h-body text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, vitae, perferendis, perspiciatis nobis voluptate quod illum soluta minima ipsam ratione quia numquam eveniet eum reprehenderit dolorem dicta nesciunt corporis?</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 highlight">
-                                    <div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Author's support</h4></div>
-                                    <div class="h-body text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, excepturi, maiores, dolorem quasi reprehenderit illo accusamus nulla minima repudiandae quas ducimus reiciendis odio sequi atque temporibus facere corporis eos expedita? </p>
-                                    </div>
-                                </div>
-                            </div> <!-- /row  -->
-
-                        </div>
-                    </div>
-                    <!-- /Highlights -->
-
-                    <!-- container -->
-                    <div class="container">
-
-                        <h2 class="text-center top-space">Frequently Asked Questions</h2>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h3>Which code editor would you recommend?</h3>
-                                <p>I'd highly recommend you <a href="http://www.sublimetext.com/">Sublime Text</a> - a free to try text editor which I'm using daily. Awesome tool!</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <h3>Nice header. Where do I find more images like that one?</h3>
-                                <p>
-                                    Well, there are thousands of stock art galleries, but personally,
-                                    I prefer to use photos from these sites: <a href="http://unsplash.com">Unsplash.com</a>
-                                    and <a href="http://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a></p>
-                            </div>
-                        </div> <!-- /row -->
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h3>Can I use it to build a site for my client?</h3>
-                                <p>
-                                    Yes, you can. You may use this template for any purpose, just don't forget about the <a href="http://creativecommons.org/licenses/by/3.0/">license</a>,
-                                    which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work.
-                                </p>
-                            </div>
-                            <div class="col-sm-6">
-                                <h3>Can you customize this template for me?</h3>
-                                <p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details. Please note, my services are not cheap.</p>
-                            </div>
-                        </div> <!-- /row -->
-
-                        <div class="jumbotron top-space">
-                            <h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
-                            <p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
-                        </div>
-
-                    </div>	<!-- /container -->
-
-                    <!-- Social links. @TODO: replace by link/instructions in template -->
-                    <section id="social">
-                        <div class="container">
-                            <div class="wrapper clearfix">
-                                <!-- AddThis Button BEGIN -->
-                                <div class="addthis_toolbox addthis_default_style">
-
-                                    <a class="addthis_button_tweet"></a>
-                                    <a class="addthis_button_linkedin_counter"></a>
-
-                                </div>
-                                <!-- AddThis Button END -->
-                            </div>
-                        </div>
-                    </section>
-                    <!-- /social links -->
-
-
-                    <footer id="footer" class="top-space">
-
-                        <div class="footer1">
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-md-3 widget">
-                                        <h3 class="widget-title">Contact</h3>
-                                        <div class="widget-body">
-                                            <p>+234 23 9873237<br>
-                                                <a href="mailto:#">some.email@somewhere.com</a><br>
-                                                <br>
-                                                234 Hidden Pond Road, Ashland City, TN 37015
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 widget">
-                                        <h3 class="widget-title">Follow me</h3>
-                                        <div class="widget-body">
-                                            <p class="follow-me-icons">
-                                                <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                                                <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                                                <a href=""><i class="fa fa-github fa-2"></i></a>
-                                                <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 widget">
-                                        <h3 class="widget-title">Text widget</h3>
-                                        <div class="widget-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                                            <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-                                        </div>
-                                    </div>
-
-                                </div> <!-- /row of widgets -->
-                            </div>
-                        </div>
-
-                        <div class="footer2">
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-md-6 widget">
-                                        <div class="widget-body">
-                                            <p class="simplenav">
-                                                <a href="#">Home</a> |
-                                                <a href="about.html">About</a> |
-                                                <a href="sidebar-right.html">Sidebar</a> |
-                                                <a href="contact.html">Contact</a> |
-                                                <b><a href="signup.html">Sign up</a></b>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 widget">
-                                        <div class="widget-body">
-                                            <p class="text-right">
-                                                Copyright © 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div> <!-- /row of widgets -->
-                            </div>
-                        </div>
-
-                    </footer>
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="header text-center">
+            <h3 class="title">FullCalendar.io</h3>
+            <p class="category">Handcrafted by our friends from
+                <a target="_blank" href="https://fullcalendar.io/">FullCalendar.io</a>. Please checkout their
+                <a href="https://fullcalendar.io/docs/" target="_blank">full documentation.</a>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="card card-calendar">
+                    <div class="card-content">
+                        <div id="fullCalendar" class="fc fc-unthemed fc-ltr"><div class="fc-toolbar"><div class="fc-left"><h2>May 2019</h2></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left"><span class="fc-icon fc-icon-left-single-arrow"></span></button><button type="button" class="fc-next-button fc-button fc-state-default"><span class="fc-icon fc-icon-right-single-arrow"></span></button><button type="button" class="fc-today-button fc-button fc-state-default fc-corner-right fc-state-disabled" disabled="">today</button></div></div><div class="fc-center"><div class="fc-button-group"><button type="button" class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button><button type="button" class="fc-agendaWeek-button fc-button fc-state-default">week</button><button type="button" class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">day</button></div></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-month-view fc-basic-view" style=""><table><thead class="fc-head"><tr><td class="fc-head-container fc-widget-header"><div class="fc-row fc-widget-header" style="border-right-width: 1px; margin-right: -0.599976px;"><table><thead><tr><th class="fc-day-header fc-widget-header fc-sun"><span>Sun</span></th><th class="fc-day-header fc-widget-header fc-mon"><span>Mon</span></th><th class="fc-day-header fc-widget-header fc-tue"><span>Tue</span></th><th class="fc-day-header fc-widget-header fc-wed"><span>Wed</span></th><th class="fc-day-header fc-widget-header fc-thu"><span>Thu</span></th><th class="fc-day-header fc-widget-header fc-fri"><span>Fri</span></th><th class="fc-day-header fc-widget-header fc-sat"><span>Sat</span></th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="fc-widget-content"><div class="fc-scroller fc-day-grid-container" style="overflow: hidden scroll; height: 668.4px;"><div class="fc-day-grid fc-unselectable"><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 111px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-past" data-date="2019-04-28"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-past" data-date="2019-04-29"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-past" data-date="2019-04-30"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2019-05-01"></td><td class="fc-day fc-widget-content fc-thu fc-today fc-state-highlight" data-date="2019-05-02"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-05-03"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-05-04"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-other-month fc-past" data-date="2019-04-28"><span class="fc-day-number">28</span></td><td class="fc-day-top fc-mon fc-other-month fc-past" data-date="2019-04-29"><span class="fc-day-number">29</span></td><td class="fc-day-top fc-tue fc-other-month fc-past" data-date="2019-04-30"><span class="fc-day-number">30</span></td><td class="fc-day-top fc-wed fc-past" data-date="2019-05-01"><span class="fc-day-number">1</span></td><td class="fc-day-top fc-thu fc-today fc-state-highlight" data-date="2019-05-02"><span class="fc-day-number">2</span></td><td class="fc-day-top fc-fri fc-future" data-date="2019-05-03"><span class="fc-day-number">3</span></td><td class="fc-day-top fc-sat fc-future" data-date="2019-05-04"><span class="fc-day-number">4</span></td></tr></thead><tbody><tr><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-rose fc-draggable"><div class="fc-content"><span class="fc-time">6a</span> <span class="fc-title">Repeating Event</span></div></a></td><td rowspan="2"></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-azure fc-draggable fc-resizable"><div class="fc-content"> <span class="fc-title">Turbo Launch</span></div><div class="fc-resizer fc-end-resizer"></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-default fc-draggable"><div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">All Day Event</span></div></a></td><td rowspan="2"></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-azure fc-draggable"><div class="fc-content"><span class="fc-time">7p</span> <span class="fc-title">Birthday Party</span></div></a></td><td rowspan="2"></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-green fc-draggable"><div class="fc-content"><span class="fc-time">10:30a</span> <span class="fc-title">Meeting</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 111px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-05-05"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-05-06"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-05-07"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2019-05-08"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2019-05-09"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-05-10"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-05-11"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-05-05"><span class="fc-day-number">5</span></td><td class="fc-day-top fc-mon fc-future" data-date="2019-05-06"><span class="fc-day-number">6</span></td><td class="fc-day-top fc-tue fc-future" data-date="2019-05-07"><span class="fc-day-number">7</span></td><td class="fc-day-top fc-wed fc-future" data-date="2019-05-08"><span class="fc-day-number">8</span></td><td class="fc-day-top fc-thu fc-future" data-date="2019-05-09"><span class="fc-day-number">9</span></td><td class="fc-day-top fc-fri fc-future" data-date="2019-05-10"><span class="fc-day-number">10</span></td><td class="fc-day-top fc-sat fc-future" data-date="2019-05-11"><span class="fc-day-number">11</span></td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-rose fc-draggable"><div class="fc-content"><span class="fc-time">6a</span> <span class="fc-title">Repeating Event</span></div></a></td><td></td><td></td><td></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-red fc-draggable"><div class="fc-content"><span class="fc-time">12p</span> <span class="fc-title">Lunch</span></div></a></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 111px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-05-12"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-05-13"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-05-14"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2019-05-15"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2019-05-16"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-05-17"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-05-18"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-05-12"><span class="fc-day-number">12</span></td><td class="fc-day-top fc-mon fc-future" data-date="2019-05-13"><span class="fc-day-number">13</span></td><td class="fc-day-top fc-tue fc-future" data-date="2019-05-14"><span class="fc-day-number">14</span></td><td class="fc-day-top fc-wed fc-future" data-date="2019-05-15"><span class="fc-day-number">15</span></td><td class="fc-day-top fc-thu fc-future" data-date="2019-05-16"><span class="fc-day-number">16</span></td><td class="fc-day-top fc-fri fc-future" data-date="2019-05-17"><span class="fc-day-number">17</span></td><td class="fc-day-top fc-sat fc-future" data-date="2019-05-18"><span class="fc-day-number">18</span></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 111px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-05-19"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-05-20"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-05-21"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2019-05-22"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2019-05-23"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-05-24"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-05-25"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-05-19"><span class="fc-day-number">19</span></td><td class="fc-day-top fc-mon fc-future" data-date="2019-05-20"><span class="fc-day-number">20</span></td><td class="fc-day-top fc-tue fc-future" data-date="2019-05-21"><span class="fc-day-number">21</span></td><td class="fc-day-top fc-wed fc-future" data-date="2019-05-22"><span class="fc-day-number">22</span></td><td class="fc-day-top fc-thu fc-future" data-date="2019-05-23"><span class="fc-day-number">23</span></td><td class="fc-day-top fc-fri fc-future" data-date="2019-05-24"><span class="fc-day-number">24</span></td><td class="fc-day-top fc-sat fc-future" data-date="2019-05-25"><span class="fc-day-number">25</span></td></tr></thead><tbody><tr><td rowspan="2"></td><td rowspan="2"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end event-orange fc-draggable" href="http://www.google.com/"><div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">Click for Google</span></div></a></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 111px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-05-26"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-05-27"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-05-28"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2019-05-29"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2019-05-30"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-05-31"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2019-06-01"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-05-26"><span class="fc-day-number">26</span></td><td class="fc-day-top fc-mon fc-future" data-date="2019-05-27"><span class="fc-day-number">27</span></td><td class="fc-day-top fc-tue fc-future" data-date="2019-05-28"><span class="fc-day-number">28</span></td><td class="fc-day-top fc-wed fc-future" data-date="2019-05-29"><span class="fc-day-number">29</span></td><td class="fc-day-top fc-thu fc-future" data-date="2019-05-30"><span class="fc-day-number">30</span></td><td class="fc-day-top fc-fri fc-future" data-date="2019-05-31"><span class="fc-day-number">31</span></td><td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2019-06-01"><span class="fc-day-number">1</span></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 113px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2019-06-02"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2019-06-03"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2019-06-04"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2019-06-05"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2019-06-06"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2019-06-07"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2019-06-08"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-other-month fc-future" data-date="2019-06-02"><span class="fc-day-number">2</span></td><td class="fc-day-top fc-mon fc-other-month fc-future" data-date="2019-06-03"><span class="fc-day-number">3</span></td><td class="fc-day-top fc-tue fc-other-month fc-future" data-date="2019-06-04"><span class="fc-day-number">4</span></td><td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2019-06-05"><span class="fc-day-number">5</span></td><td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2019-06-06"><span class="fc-day-number">6</span></td><td class="fc-day-top fc-fri fc-other-month fc-future" data-date="2019-06-07"><span class="fc-day-number">7</span></td><td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2019-06-08"><span class="fc-day-number">8</span></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <iframe class="full-screen-preview__frame" src="http://www.urbanui.com/turbo/pages/index.html" name="preview-frame" frameborder="0" noresize="noresize" data-view="fullScreenPreview" style="height: 700px;">
+    </iframe>
+
+
+    <script>$(function(){viewloader.execute(Views);});</script>
+
+
+    <div id="affiliate-tracker" class="is-hidden" data-view="affiliatesTracker" data-cookiebot-enabled="true"></div>
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="af9b8468-6418-4ac5-9fba-62c4ecf96338" type="text/javascript" async=""></script>
+
+
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        setupGoogleAnalytics();
+
+        if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.statistics ) {
+            loadGoogleAnalytics();
+        } else {
+            window.addEventListener('CookiebotOnAccept', function (e) {
+                if (Cookiebot.consent.statistics) {
+                    loadGoogleAnalytics();
+                }
+            }, false);
+        }
+
+        function setupGoogleAnalytics() {
+            (function () {
+                ga("create", "UA-11834194-7", {"name":"m","allowLinker":true});
+
+                var ACCOUNTS = ["m"];
+                window._envGaTrackerNames = ACCOUNTS;
+
+                for (var i = 0; i < ACCOUNTS.length; i++) {
+                    t = ACCOUNTS[i];
+
+                    ga(t+'.require', 'linker');
+                    ga(t+'.linker:autoLink', ["activeden.net","audiojungle.net","themeforest.net","videohive.net","graphicriver.net","3docean.net","codecanyon.net","photodune.net","market.styleguide.envato.com","elements.envato.com","build.envatohostedservices.com","author.envato.com","tutsplus.com","sites.envato.com"]);
+
+                    ga(t+'.require', 'ec');
+
+                    ga(t+'.require', 'displayfeatures');
+
+                    ga(t+'.require', 'linkid', 'linkid.js');
+
+                    ga(t+'.set', 'dimension20', 'other')
+
+
+
+                    if ('') {
+                        ga(t+'.send', {
+                            hitType: 'pageview',
+                            page: ''
+                        });
+                    } else if ('') {
+                        // append the analytics_suffix to the page path so the flash alert/error type can be tracked
+                        var analyticsSuffix = $.trim('').replace(/([A-Z])/g, '$1').replace(/[-_\s]+/g, '-').toLowerCase();
+                        var uri = URI(window.location.pathname + window.location.search);
+                        uri.path(uri.path() + '/' + analyticsSuffix);
+                        var tracking_path = uri.path() + uri.search();
+                        ga(t+'.send', {
+                            hitType: 'pageview',
+                            page: tracking_path,
+                        });
+                    } else {
+                        ga(t+'.send', 'pageview');
+                    }
+                }
+            }());
+        }
+
+        function loadGoogleAnalytics() {
+            (function () {
+
+                var s=document.createElement('script');
+                s.type='text/javascript';
+                s.async=true;
+                s.src='https://www.google-analytics.com/analytics.js';
+                var x=document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s,x);
+            }());
+        }
+
+
+    </script>
+
+
+
+    <script>
+
+        if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.statistics ) {
+            enableGoogleAnalyticsLinkWrapper();
+        } else {
+            window.addEventListener('CookiebotOnAccept', function (e) {
+                if (Cookiebot.consent.statistics) {
+                    enableGoogleAnalyticsLinkWrapper();
+                }
+            }, false);
+        }
+
+        function enableGoogleAnalyticsLinkWrapper() {
+            // GA: universal analytics link wrapper
+            (function(){
+                window._envTrkrs = [["m", "UA-11834194-7"]];
+
+                var debug = false;
+                var MAX_RETRIES = 10;
+
+                /*
+                   The script needs to wait until the Analytics script
+                   has been downloaded from Google before initializing
+                */
+                var waitForAnalytics = function(){
+                    this.count = this.count || 0;
+
+                    if (window.ga && ga.getByName) {
+                        e.init();
+                    } else {
+                        if (count < MAX_RETRIES) { setTimeout(waitForAnalytics, 250); }
+                        count++;
+                    }
+                };
+
+                var e = {
+                    _envArray: [],
+                    _envTrkrs: (window._envTrkrsCust && window._envTrkrsCust.length) ? window._envTrkrs.concat(window._envTrkrsCust) : window._envTrkrs,
+                    init: function() {
+                        for (var i=0; i < _envTrkrs.length; i++) {
+                            if(!ga.getByName(_envTrkrs[i][0])) {
+                                ga("create", _envTrkrs[i][1], "auto", {name: _envTrkrs[i][0], allowLinker: true});
+                            }
+                        }
+
+                        document.addEventListener('DOMContentLoaded', function(){
+                            e.wrapperInit();
+                        });
+
+                        if (debug) {console.log('Initiated');}
+                    },
+                    wrapperInit: function() {
+                        if (typeof window._envIsRunning != 'undefined' || window._envIsRunning == true) {
+                            return
+                        }
+                        window._envIsRunning = true;
+
+                        if (document.addEventListener) {
+                            document.addEventListener('click', function(event){
+                                var target = event.target;
+                                if (target && target.tagName === 'A') {
+                                    e._envLinksTracker(event);
+                                }
+                            });
+                        }
+                    },
+                    isInArray: function(e, t) {
+                        for (var n = 0; n < t.length; n++) {
+                            var r = new RegExp(t[n], 'i');
+                            if (r.test(e)) {
+                                return n
+                            }
+                        }
+                        return -1
+                    },
+                    _envTrackevent: function(e, t, n, r) {
+                        for (var i = 0; i < this._envTrkrs.length; i++) {
+                            var s = this._envTrkrs[i][0].length == 0 ? '' : this._envTrkrs[i][0] + '.';
+                            r.length == 0 ? ga(s + 'send', 'event', e, t, n) : ga(s + 'send', 'event', e, t, n, r)
+                        }
+                    },
+                    _envTrackpageview: function(e, t) {
+                        t = t.charAt(0) == '/' ? t : '/' + t;
+                        for (var n = 0; n < this._envTrkrs.length; n++) {
+                            var r = this._envTrkrs[n][0].length == 0 ? '' : this._envTrkrs[n][0] + '.';
+                            ga(r + 'send', 'pageview', e + t);
+                        }
+                    },
+                    _envLinksTracker: function(t) {
+                        var r = false;
+                        var i = {
+                            outbound: {
+                                run: true,
+                                useEvent: true
+                            },
+                            download: {
+                                run: true,
+                                useEvent: true,
+                                reg: ''
+                            },
+                            self: {
+                                run: false,
+                                useEvent: true
+                            },
+                            mail: {
+                                run: true,
+                                useEvent: true
+                            },
+                            ext: /\.(doc.?|xls.?|ppt.?|exe|zip|rar|gz|tar|tgz|dmg|csv|pdf|xpi|txt|mp3)$/i
+                        };
+                        var s = t.srcElement ? t.srcElement : this;
+                        if (t.srcElement) {
+                            r = true
+                        }
+                        while (s.tagName != 'A') {
+                            s = s.parentNode
+                        }
+                        if (s.href == undefined || s.href == null) {
+                            return true
+                        }
+                        var o = s.href;
+                        if (o.length == 0) return;
+                        var u = s.hostname.toLowerCase();
+                        var a = s.pathname;
+                        if (a.length == 0) {
+                            a = '/'
+                        } else if (a.substr(0, 1) != '/') {
+                            a = '/' + a
+                        }
+                        var f = s.protocol;
+                        var l = s.search;
+                        var c = location.hostname;
+                        c = c.replace(/^www\./i, '').toLowerCase();
+                        u = u.replace(/^www\./i, '').toLowerCase();
+                        if (o.match(/^#/)) {
+                            if (i.self.run) {
+                                i.self.useEvent ? e._envTrackevent('self', 'click - ' + c, o, '') : e._envTrackpageview('/virtual/self', '/' + o);
+                                return true
+                            }
+                        } else if (f.match(/^mailto:/i)) {
+                            if (i.mail.run) {
+                                o = o.replace(/^mailto:/i, '');
+                                i.mail.useEvent ? e._envTrackevent('mailto', 'click - ' + c, o, '') : e._envTrackpageview('/virtual/mailto', o);
+                                return true
+                            }
+                        } else if ((new RegExp(i.ext)).test(a)) {
+                            if (i.download.run) {
+                                o = o.replace(/^https?:\/\//i, '');
+                                i.download.useEvent ? e._envTrackevent('download', 'click - ' + c, o, '') : e._envTrackpageview('/virtual/download', o);
+                                return true
+                            }
+                        } else if (u == undefined || u.length == 0 || f.match(/^javascript:/i)) {
+                            return
+                        } else if ((new RegExp(c + '$', 'i')).test(u) || (new RegExp(u + '$', 'i')).test(c)) {
+                            if (i.download.run && i.download.reg.length != 0) {
+                                if ((new RegExp(i.download.reg, 'i')).test(a + l)) {
+                                    o = o.replace(/^https?:\/\//i, '');
+                                    i.download.useEvent ? e._envTrackevent('download', 'click - ' + c, o, '') : e._envTrackpageview('/virtual/download', o);
+                                    return true
+                                }
+                            }
+                        } else if (u != c) {
+                            if (e.isInArray(u, e._envArray) == -1) {
+                                if (i.outbound.run) {
+                                    i.outbound.useEvent ? e._envTrackevent('outbound', 'click - ' + c, u + a + l, '') : e._envTrackpageview('/virtual/outbound', u + a);
+                                    return true
+                                }
+                            } else if (e.isInArray(u, e._envArray) != -1) {
+                                var h = s.target;
+                                if (h != null && h == '_blank') {
+                                    if ((new RegExp(/_utma=/)).test(l)) {
+                                        return true
+                                    }
+                                    var p = e._envTrkrs[0][0].length == 0 ? '' : _envTrkrs[0][0] + '.';
+                                    return true
+                                } else {
+                                    return false
+                                }
+                            }
+                        }
+                    }
+                };
+
+                waitForAnalytics();
+            })()
+        }
+    </script>
+
+
+
+
+    <script>
+        // Set New Relic custom attributes
+        (function () {
+            if (typeof newrelic !== 'undefined') {
+                newrelic.setCustomAttribute('pageType', 'other')
+            }
+        })()
+    </script>
+
+    <script>
+        if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.marketing) {
+            enableGoogleTagManager();
+        } else {
+            window.addEventListener('CookiebotOnAccept', function (e) {
+                if (Cookiebot.consent.marketing) {
+                    enableGoogleTagManager();
+                }
+            }, false);
+        }
+
+        function enableGoogleTagManager() {
+            var gtmId = 'GTM-585RXMV';
+            // Google Tag Manager Tracking Code
+            (function(w,d,s,l,i) {
+                w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer',gtmId);
+
+
+            window.addEventListener('load', function() {
+                window.dataLayer.push({
+                    event: 'pinterestReady'
+                });
+            });
+        }
+    </script>
+
+
+    <div id="intercom-setup" class="is-hidden" data-view="intercomSetup" data-cookiebot-enabled="true" data-intercom-settings-payload="{&quot;app_id&quot;:&quot;s9exa3j0&quot;}" data-intercom-app-id="s9exa3j0" data-should-shutdown="false" data-should-hide="true"></div>
+
+
 
 {% endblock %}

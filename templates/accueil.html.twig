@@ -1,0 +1,204 @@
+
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="fr">
+<head>
+    <title>Hyperspace by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('administration/css/main.css') }}" />
+    <noscript><link rel="stylesheet" href="{{ asset('administration/css/noscript.css') }}" /></noscript>
+    {% endblock %}
+</head>
+<body class="is-preload">
+
+<!-- Sidebar -->
+<section id="sidebar">
+    <div class="inner">
+        <nav>
+            <ul>
+                <li><a href="#intro">Welcome</a></li>
+                <li><a href="#one">Who we are</a></li>
+                <li><a href="#two">What we do</a></li>
+                <li><a href="#three">Get in touch</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Intro -->
+    <section id="intro" class="wrapper style1 fullscreen fade-up">
+        <div class="inner">
+            <h1>pfeMaster</h1>
+            <p> Garantir un encadrement pfe plus facile pour les etudiants et les encadreurs  </p>
+            <ul class="actions">
+                <li><a href="#one" class="button scrolly">voir plus</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style2 spotlights">
+
+        <section>
+            <a href="#" class="image"><img src="{{ asset('administration/img/en_acc.jpg') }}" alt="" data-position="top center" /></a>
+            <div class="content">
+                <div class="inner">
+                    <h2>Espace Encadreur</h2>
+                    <p>espace pour les professeur encadreur </p>
+                    <ul class="actions">
+                        <li><a href="{{ path('inscription_encadreur') }}" class="button">s'inscrire</a></li>
+                        <li><a href="{{ path('app_login') }}" class="button">se Connecter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <a href="#" class="image"><img src="{{ asset('administration/img/et_acc.jpg') }}" alt="" data-position="25% 25%" /></a>
+            <div class="content">
+                <div class="inner">
+                    <h2>Espace Etudiant</h2>
+                    <p>  espace pour les etudiant en terminal              </p>
+                    <ul class="actions">
+                        <li><a href="{{ path('inscription_etudiant') }}" class="button">s'inscrire</a></li>
+                        <li><a href="{{ path('app_login') }}" class="button">se Connecter</a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style3 fade-up">
+        <div class="inner">
+            <h2>What we do</h2>
+            <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+            <div class="features">
+                <section>
+                    <span class="icon major fa-Mortarboard"></span>
+                    <h3>Espace d'encadrement</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+                <section>
+                    <span class="icon major fa-lock"></span>
+                    <h3>suivie des projets</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+                <section>
+                    <span class="icon major fa-cog"></span>
+                    <h3>offres de stages</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+                <section>
+                    <span class="icon major fa-desktop"></span>
+                    <h3>guides pour rapport </h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+                <section>
+                    <span class="icon major fa-chain"></span>
+                    <h3>tutoriel</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+                <section>
+                    <span class="icon major fa-diamond"></span>
+                    <h3>questions et renseingnemnts</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                </section>
+            </div>
+            <ul class="actions">
+                <li><a href="generic.html" class="button">Learn more</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="wrapper style1 fade-up">
+        <div class="inner">
+            <h2>Get in touch</h2>
+            <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+            <div class="split style1">
+                <section>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><a href="" class="button submit">Send Message</a></li>
+                        </ul>
+                    </form>
+                </section>
+                <section>
+                    <ul class="contact">
+                        <li>
+                            <h3>Address</h3>
+                            <span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+                        </li>
+                        <li>
+                            <h3>Email</h3>
+                            <a href="#">user@untitled.tld</a>
+                        </li>
+                        <li>
+                            <h3>Phone</h3>
+                            <span>(000) 000-0000</span>
+                        </li>
+                        <li>
+                            <h3>Social</h3>
+                            <ul class="icons">
+                                <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+                                <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper style1-alt">
+    <div class="inner">
+        <ul class="menu">
+
+        </ul>
+    </div>
+</footer>
+{% block javascripts %}
+<!-- Scripts -->
+<script src="{{ asset('administration/js/js/jquery.min.js') }}"></script>
+<script src="{{ asset('administration/js/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ asset('administration/js/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ asset('administration/js/js/browser.min.js') }}"></script>
+<script src="{{ asset('administration/js/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('administration/js/js/util.js') }}"></script>
+<script src="{{ asset('administration/js/js/main.js') }}"></script>
+
+{% endblock %}
+</body></html>
