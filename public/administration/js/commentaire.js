@@ -21,7 +21,7 @@ $(document).on('submit', "#ajouter-commentaire", function (e) {
                 $formInput.prop("disabled", false);
             } else if (response.success === true) {
                 $('#message-commentaire').val('');
-                $('.last').append(response.view);
+                $('.tt').before(response.view);
             }
         },
         error: function (XHR, status, error) {
