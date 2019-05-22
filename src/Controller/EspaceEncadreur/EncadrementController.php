@@ -6,6 +6,7 @@ use App\Entity\Commentaire;
 use App\Entity\Encadrement;
 use App\Entity\Encadreur;
 use App\Entity\Etudiant;
+use App\Entity\Notification;
 use App\Entity\Projet;
 use App\Entity\Tache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -62,6 +63,12 @@ class EncadrementController extends AbstractController
                 $em->persist($encadrement);
                 $em->flush();
                 $this->addFlash('success', 'Ajouté à votre liste');
+
+                $notification = new Notification();
+                $notification->setTitre('Vous êtes ajouté à la liste d\'encadrement de proffesseur ' . $this->getUser()->getNomPrenom());
+                $notification->setUtilisateur($etudiant->getUtilisateur());
+                $em->persist($notification);
+                $em->flush();
             }
         }
         return new JsonResponse();

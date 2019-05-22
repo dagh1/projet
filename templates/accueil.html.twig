@@ -123,28 +123,34 @@
 
     <!-- Three -->
     <section id="three" class="wrapper style1 fade-up">
-        <div class="inner">
+        <div class="inner" id="contact">
             <h2>Get in touch</h2>
             <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
             <div class="split style1">
                 <section>
-                    <form method="post" action="#">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    <form method="post" action="{{ path('envoyer_email') }}">
                         <div class="fields">
                             <div class="field half">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" />
+                                <input type="text" name="nom" id="name"  required="required"/>
                             </div>
                             <div class="field half">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" id="email" />
+                                <input type="email" name="email" id="email" required="required"/>
                             </div>
                             <div class="field">
                                 <label for="message">Message</label>
-                                <textarea name="message" id="message" rows="5"></textarea>
+                                <textarea name="message" id="message" rows="5" required="required"></textarea>
                             </div>
                         </div>
                         <ul class="actions">
-                            <li><a href="" class="button submit">Send Message</a></li>
+                            <li><button class="button submit" type="submit">Send Message</button></li>
                         </ul>
                     </form>
                 </section>
@@ -152,17 +158,17 @@
                     <ul class="contact">
                         <li>
                             <h3>Address</h3>
-                            <span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
+                            <span>Monastir <br />
+											stah jaber, TN 5000<br />
+											</span>
                         </li>
                         <li>
                             <h3>Email</h3>
-                            <a href="#">user@untitled.tld</a>
+                            <a href="">pfeadmin@gmail.com</a>
                         </li>
                         <li>
-                            <h3>Phone</h3>
-                            <span>(000) 000-0000</span>
+                            <h3>telephone</h3>
+                            <span>(216) 22 111 333</span>
                         </li>
                         <li>
                             <h3>Social</h3>

@@ -22,7 +22,6 @@ class Utilisateur implements UserInterface, \Serializable, EquatableInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-
      */
     private $email;
 
@@ -47,6 +46,10 @@ class Utilisateur implements UserInterface, \Serializable, EquatableInterface
      */
     private $prenom;
 
+    public function getNomPrenom()
+    {
+        return $this->nom . ' ' . $this->prenom;
+    }
 
     public function getId(): ?int
     {
@@ -72,7 +75,7 @@ class Utilisateur implements UserInterface, \Serializable, EquatableInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -99,7 +102,7 @@ class Utilisateur implements UserInterface, \Serializable, EquatableInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return (string)$this->password;
     }
 
     public function setPassword(string $password): self

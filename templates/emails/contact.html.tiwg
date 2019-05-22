@@ -1,0 +1,16 @@
+Bonjour
+
+<p>
+Vous avez un bnouveau email de {{ nom }}
+</p>
+
+<br>
+<p>
+    {{ contenue }}
+</p>
+
+<br>
+-------------------------------------------
+<p>
+    Cet email a été envoyé depuis le formulaire sir le site monsite.tn.
+</p>

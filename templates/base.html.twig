@@ -24,7 +24,12 @@
               href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
         <link href="{{ asset('administration/vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css') }}"
               rel="stylesheet">
+
+        <script src="{{ asset('administration/vendors/jquery-3.1.1.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('administration/vendors/jquery-ui-1.12.0/jquery-ui.js') }}"></script>
+
     {% endblock %}
+
 </head>
 <body>
 <div class="wrapper">
@@ -54,9 +59,8 @@
     </div>
 </div>
 {% block javascripts %}
-
     <!--   Core JS Files   -->
-    <script src="{{ asset('administration/vendors/jquery-ui-1.12.0/jquery-ui.js') }}"></script>
+
     <script src="{{ asset('administration/vendors/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('administration/vendors/material.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('administration/vendors/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>
@@ -96,6 +100,7 @@
     <script src="{{ asset('administration/js/bootbox.min.js') }}"></script>
     <script src="{{ asset('administration/js/remove.js') }}"></script>
     <script src="{{ asset('administration/js/commentaire.js') }}"></script>
+
 {% endblock %}
 </body>
 </html>

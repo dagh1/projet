@@ -1,0 +1,33 @@
+<a href="" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="material-icons">notifications</i>
+    {% if totalNotif > 0 %}
+        <span class="notification">{{ totalNotif }}</span>
+    {% endif %}
+    <p class="hidden-lg hidden-md">
+        Notifications
+        <b class="caret"></b>
+    </p>
+</a>
+<ul class="dropdown-menu">
+    {% for notif in notifications %}
+        <li style="min-width: 260px; max-width: 300px;">
+            <a href="#" style="white-space: inherit">{{ notif.titre|slice(0,60) }}</a>
+        </li>
+    {% endfor %}
+
+    {% for event in evenements %}
+        <li style="min-width: 260px; max-width: 300px;">
+            <a href="{{ path('espace_encadreur_index') }}"
+               style="white-space: inherit">{{ event.titre|slice(0,60) }}</a>
+        </li>
+    {% endfor %}
+
+    {% if totalNotif > 0 %}
+        <li>
+            <a href="#">Aucune notifications</a>
+        </li>
+    {% endif %}
+    <li>
+        <a href="{{ path('espace_etudiant_notifications') }}">Voir tous</a>
+    </li>
+</ul>
