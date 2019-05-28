@@ -62,7 +62,7 @@ class DefaultController extends AbstractController
         }
         $em->flush();
 
-        return $this->redirectToRoute('espace_etudiant_index');
+
         return $this->render('espace_etudiant/notification/liste.html.tiwg', array(
             'notifications' => $notifications,
 

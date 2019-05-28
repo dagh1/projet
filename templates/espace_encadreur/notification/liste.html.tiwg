@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Notifications{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <h4 class="card-title">Liste des notifications</h4>
+
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="col-lg-3">Titre</th>
+                                <th class="col-lg-2">Date de creation</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for notification in notifications %}
+                                <tr>
+                                    <td>{{ notification.titre|capitalize }}</td>
+                                    <td>{{ notification.dateCreation|date('d-m-Y') }}</td>
+                                 
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
