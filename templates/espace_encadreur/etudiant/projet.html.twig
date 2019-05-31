@@ -21,6 +21,10 @@
                                 {{ projet.description }}
                             </div>
                         </div>
+                        <hr style="border: 1px solid cadetblue">
+
+                        <h5 >telecharger le projet</h5>
+                        <a href="{{ asset(projet.webPath) }}" download="{{ projet.sujet}}"><i class="material-icons">cloud_download</i></a>
                     </div>
                 </div>
             </div>
