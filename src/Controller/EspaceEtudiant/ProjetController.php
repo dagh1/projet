@@ -2,6 +2,7 @@
 
 namespace App\Controller\EspaceEtudiant;
 
+use App\Entity\Commentaire;
 use App\Entity\Etudiant;
 use App\Entity\Projet;
 use App\Entity\Societe;
@@ -42,9 +43,12 @@ class ProjetController extends AbstractController
 
         $taches = $em->getRepository(Tache::class)->findBy(array('projet'=>$projet), array('id'=> 'desc'));
 
+        $commentaires = $em->getRepository(Commentaire::class)->findBy(array('projet' => $projet));
+
         return $this->render('espace_etudiant/projet/voir.html.twig', array(
             'projet' => $projet,
-            'taches'=> $taches
+            'taches'=> $taches,
+            'commentaires' => $commentaires
         ));
     }
 

@@ -22,9 +22,11 @@
                             </div>
                         </div>
                         <hr style="border: 1px solid cadetblue">
-
-                        <h5 >telecharger le projet</h5>
-                        <a href="{{ asset(projet.webPath) }}" download="{{ projet.sujet}}"><i class="material-icons">cloud_download</i></a>
+                        <div class="col-sm-6">
+                            <h5>telecharger le projet</h5>
+                            <a href="{{ asset(projet.webPath) }}" download="{{ projet.sujet }}"><i
+                                        class="material-icons">cloud_download</i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,9 +66,9 @@
                 </div>
                 <div class="card-content">
                     <div class="dropdown pull-right">
-                        <button type="button" class="btn btn-round btn-info ">
-                            <a href="{{ path('espace_encadreur_tache_ajouter', {'id': projet.id}) }}"><i
-                                        class="material-icons">add</i></a>
+                        <button type="button" rel="tooltip" class="btn btn-round btn-info ">
+                            <a href="{{ path('espace_encadreur_tache_ajouter', {'id': projet.id}) }}">
+                                <i class="material-icons">add</i></a>
                         </button>
                     </div>
                     <table class="table">
@@ -82,7 +84,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td>{{ tache.description }}</td>
+                                <td>{{ tache.titre }}</td>
                                 <td class="td-actions text-right">
                                     <button type="button" rel="tooltip" title=""
                                             class="btn btn-primary btn-simple btn-xs" data-original-title="Edit Task">

@@ -39,7 +39,6 @@ class RapportEtudiant
      * @ORM\Column(name="nom_fichier", type="string", length=180)
      */
     private $nomFichier;
-
     /**
      * @Assert\File()
      */
@@ -88,7 +87,6 @@ class RapportEtudiant
 
         return $this;
     }
-
 
     public function setFile(UploadedFile $file)
     {
@@ -163,7 +161,7 @@ class RapportEtudiant
     //folder
     public function getUploadDir()
     {
-        return 'uploads/rapports_projets';
+        return 'uploads/rapports';
     }
 
     // path to folder web
@@ -199,4 +197,5 @@ class RapportEtudiant
 
         return $this;
     }
+
 }

@@ -8,6 +8,7 @@ use App\Entity\Encadreur;
 use App\Entity\Etudiant;
 use App\Entity\Notification;
 use App\Entity\Projet;
+use App\Entity\RapportEtudiant;
 use App\Entity\Tache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -140,13 +141,13 @@ class EncadrementController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $projet = $em->getRepository(Projet::class)->find($id);
-
         $taches = $em->getRepository(Tache::class)->findBy(array('projet' => $projet), array('id' => 'desc'));
         $commentaires = $em->getRepository(Commentaire::class)->findBy(array('projet' => $projet));
 
         return $this->render('espace_encadreur/etudiant/projet.html.twig', array(
             'projet' => $projet,
             'taches' => $taches,
+
             'commentaires' => $commentaires
         ));
     }

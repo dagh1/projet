@@ -3,6 +3,7 @@
 {% block title %} Gestion Projet{% endblock %}
 
 {% block body %}
+    {% if projets  %}
     {% for projet in projets %}
         <div class="col-md-6">
             <div class="card card-testimonial">
@@ -23,4 +24,13 @@
             </div>
         </div>
     {% endfor %}
+    {% else %}
+    <div class="col-md-12">
+        <div class="card card-testimonial">
+           <h3>Pas de projets   </h3>
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}
